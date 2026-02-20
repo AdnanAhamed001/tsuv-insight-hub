@@ -3,56 +3,68 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Link } from "react-router-dom";
 import {
   Calculator, BarChart3, ClipboardCheck, Wallet, FileText,
-  Play, Headphones, ArrowRight, TrendingUp, Lightbulb
+  Play, Headphones, ArrowRight, TrendingUp, ChevronDown
 } from "lucide-react";
 
-/* ── Resource category cards ── */
-const categories = [
+/* ── Section 1: Big Hub Cards ── */
+const hubCards = [
   {
     id: "tools",
-    title: "STARTUP",
-    titleItalic: "TOOLS",
-    desc: "Financial calculators, market sizing, SaaS metrics, and founder assessments — built for early-stage startups.",
+    emoji: "🧰",
+    title: "Tools",
+    subtitle: "Calculators & Financial Models",
+    desc: "Equity dilution, runway, market sizing, LTV, IRR, and more — built for early-stage startups.",
     icon: Calculator,
+    gradient: "from-[hsl(198,100%,12%)] to-[hsl(198,80%,22%)]",
   },
   {
     id: "assessments",
-    title: "FOUNDER",
-    titleItalic: "ASSESSMENTS",
-    desc: "Score your startup's health, fundraising readiness, and idea strength with structured quizzes.",
+    emoji: "📋",
+    title: "Assessments",
+    subtitle: "Readiness & Health Checks",
+    desc: "Structured quizzes to score your startup's health, fundraising readiness, and idea strength.",
     icon: ClipboardCheck,
+    gradient: "from-[hsl(198,80%,18%)] to-[hsl(198,60%,30%)]",
   },
   {
     id: "reports",
-    title: "MARKET",
-    titleItalic: "REPORTS",
-    desc: "Deep-dive insights, sector analysis, and strategic playbooks for Indian startups.",
+    emoji: "📊",
+    title: "Reports",
+    subtitle: "Market Insights & Case Studies",
+    desc: "Deep-dive sector analysis, strategic playbooks, and founder case studies.",
     icon: FileText,
+    gradient: "from-[hsl(37,60%,35%)] to-[hsl(37,96%,52%)]",
   },
   {
     id: "pr",
-    title: "PR",
-    titleItalic: "ACTIVITY",
-    desc: "Press coverage, announcements, and media features about our portfolio and ecosystem.",
+    emoji: "📰",
+    title: "PR Activity",
+    subtitle: "Press Mentions & Awards",
+    desc: "Press coverage, announcements, media features, and ecosystem recognition.",
     icon: TrendingUp,
+    gradient: "from-[hsl(198,100%,16%)] to-[hsl(198,60%,28%)]",
   },
   {
     id: "videos",
-    title: "VIDEO",
-    titleItalic: "CONTENT",
-    desc: "Demo days, pitch recordings, masterclasses, and founder interviews.",
+    emoji: "🎥",
+    title: "Videos",
+    subtitle: "Demo Days & Masterclasses",
+    desc: "Pitch recordings, investor showcase events, and founder masterclasses.",
     icon: Play,
+    gradient: "from-[hsl(198,80%,14%)] to-[hsl(198,100%,22%)]",
   },
   {
     id: "podcasts",
-    title: "AUDIO &",
-    titleItalic: "PODCASTS",
+    emoji: "🎙️",
+    title: "Podcasts",
+    subtitle: "Interviews & Ecosystem Audio",
     desc: "Conversations with the executive team, coaches, and successful founders.",
     icon: Headphones,
+    gradient: "from-[hsl(37,80%,30%)] to-[hsl(37,96%,50%)]",
   },
 ];
 
-/* ── Tool / Assessment lists ── */
+/* ── Tool / Assessment lists (for expanded sections) ── */
 const financialTools = [
   { name: "Equity Dilution Calculator", desc: "Understand how funding rounds impact founder ownership.", path: "/resources/equity-dilution" },
   { name: "Startup Runway & Burn Rate", desc: "Measure survival timeline and capital efficiency.", path: "/resources/runway-burn-rate" },
@@ -63,21 +75,21 @@ const financialTools = [
 ];
 
 const marketTools = [
-  { name: "Market Sizing (TAM/SAM/SOM)", desc: "Quantify your total market opportunity.", path: "/resources/market-sizing" },
-  { name: "Rule of 40 Calculator", desc: "Evaluate SaaS growth and profitability balance.", path: "/resources/rule-of-40" },
-  { name: "Burn Multiple Calculator", desc: "Measure capital efficiency against growth.", path: "/resources/burn-multiple" },
-  { name: "LTV Calculator", desc: "Calculate long-term customer profitability.", path: "/resources/ltv-calculator" },
-  { name: "Customer Payback Period", desc: "How quickly acquisition costs are recovered.", path: "/resources/customer-payback" },
+  { name: "Market Sizing (TAM/SAM/SOM)", path: "/resources/market-sizing" },
+  { name: "Rule of 40 Calculator", path: "/resources/rule-of-40" },
+  { name: "Burn Multiple Calculator", path: "/resources/burn-multiple" },
+  { name: "LTV Calculator", path: "/resources/ltv-calculator" },
+  { name: "Customer Payback Period", path: "/resources/customer-payback" },
+];
+
+const capitalTools = [
+  { name: "Capital Deployment Planner", path: "/resources/capital-deployment" },
 ];
 
 const assessmentsList = [
   { name: "Startup Health Check", desc: "Comprehensive startup maturity assessment.", path: "/resources/startup-health-check" },
   { name: "Fundraising Readiness Score", desc: "Evaluate investor preparedness.", path: "/resources/fundraising-readiness" },
   { name: "Startup Idea Validator Quiz", desc: "Test idea strength before building.", path: "/resources/idea-validator" },
-];
-
-const capitalTools = [
-  { name: "Capital Deployment Planner", desc: "Plan raise amount, allocation, and runway impact.", path: "/resources/capital-deployment" },
 ];
 
 const articles = [
@@ -87,22 +99,22 @@ const articles = [
   { title: "Ezee Notes: Your Study Partner", desc: "Be it school or college, students never show interest in studying..." },
 ];
 
-const featuredTools = [
-  { name: "Equity Dilution Calculator", desc: "See how each funding round impacts your ownership.", path: "/resources/equity-dilution", icon: Calculator },
-  { name: "Startup Health Check", desc: "Score your startup across 5 key dimensions.", path: "/resources/startup-health-check", icon: ClipboardCheck },
-  { name: "Capital Deployment Planner", desc: "Plan your raise, allocation, and runway.", path: "/resources/capital-deployment", icon: Wallet },
+/* ── Section 3: Featured Tools & Assessments ── */
+const featuredCards = [
+  { name: "VC Scout Readiness Assessment", cta: "Take the Assessment →", path: "/resources/fundraising-readiness", icon: ClipboardCheck },
+  { name: "Founder-Market Fit Scorecard", cta: "Take the Assessment →", path: "/resources/startup-health-check", icon: BarChart3 },
+  { name: "Angel Investor Readiness Quiz", cta: "Take the Quiz →", path: "/resources/idea-validator", icon: TrendingUp },
+  { name: "Berkus Method Valuation Calculator", cta: "Calculate →", path: "/resources/berkus-method", icon: Calculator },
 ];
 
-const ToolCard = ({ name, desc, path }: { name: string; desc: string; path: string }) => (
-  <Link to={path} className="tool-card group flex flex-col">
-    <Calculator className="mb-3 h-6 w-6 text-secondary" />
-    <h4 className="mb-1 font-display text-sm font-semibold group-hover:text-secondary">{name}</h4>
-    <p className="flex-1 text-xs text-muted-foreground">{desc}</p>
-    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">
-      Open Tool <ArrowRight size={12} />
-    </span>
-  </Link>
-);
+/* ── Section 4: FAQs ── */
+const faqs = [
+  { q: "How do I use the valuation calculators?", a: "Enter your startup's financial data into the input fields. The calculator will instantly compute results and display visual outputs. No account needed." },
+  { q: "Are these tools free to use?", a: "Yes, all tools and assessments on StepUp are completely free for founders." },
+  { q: "What is the Startup Health Check?", a: "A structured 20-question assessment that scores your startup across Product, Market, Team, Financial Health, and Growth dimensions." },
+  { q: "Can I download my results?", a: "Currently results are displayed on-screen. PDF export functionality is coming soon." },
+  { q: "Who are these tools designed for?", a: "Early-stage founders, pre-MVP entrepreneurs, and startups preparing for fundraising — especially from Tier II & III cities." },
+];
 
 const Resources = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -121,28 +133,28 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Category Cards — Antler-inspired big cards */}
+      {/* ═══ SECTION 1: The Resource Hubs — Big Clickable Cards ═══ */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((cat) => (
+            {hubCards.map((card) => (
               <button
-                key={cat.id}
-                onClick={() => setActiveSection(activeSection === cat.id ? null : cat.id)}
-                className={`group relative overflow-hidden rounded-xl border-2 p-8 text-left transition-all duration-300 hover:shadow-xl ${
-                  activeSection === cat.id
-                    ? "border-secondary bg-primary text-primary-foreground shadow-xl"
-                    : "border-border bg-card hover:border-secondary"
-                }`}
+                key={card.id}
+                onClick={() => setActiveSection(activeSection === card.id ? null : card.id)}
+                className={`group relative overflow-hidden rounded-2xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl min-h-[220px] flex flex-col justify-end bg-gradient-to-br ${card.gradient}`}
               >
-                <cat.icon className={`mb-5 h-10 w-10 ${activeSection === cat.id ? "text-secondary" : "text-secondary"}`} />
-                <h3 className="font-display text-xl font-bold">
-                  {cat.title} <em className="not-italic text-secondary">{cat.titleItalic}</em>
-                </h3>
-                <p className={`mt-2 text-sm ${activeSection === cat.id ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                  {cat.desc}
-                </p>
-                <ArrowRight className={`absolute right-6 top-8 h-5 w-5 transition-transform group-hover:translate-x-1 ${activeSection === cat.id ? "text-secondary" : "text-muted-foreground"}`} />
+                {/* Overlay for readability */}
+                <div className="absolute inset-0 bg-black/20 transition-all group-hover:bg-black/30" />
+                <div className="relative z-10">
+                  <span className="mb-2 block text-3xl">{card.emoji}</span>
+                  <h3 className="font-display text-2xl font-bold text-white">{card.title}</h3>
+                  <p className="mt-0.5 text-sm font-medium text-white/80">{card.subtitle}</p>
+                  <p className="mt-2 text-xs text-white/60 line-clamp-2">{card.desc}</p>
+                </div>
+                <ArrowRight className={`absolute right-6 top-6 h-5 w-5 text-white/60 transition-transform group-hover:translate-x-1 group-hover:text-white ${activeSection === card.id ? "rotate-90" : ""}`} />
+                {activeSection === card.id && (
+                  <div className="absolute bottom-0 left-0 h-1 w-full bg-secondary" />
+                )}
               </button>
             ))}
           </div>
@@ -152,18 +164,43 @@ const Resources = () => {
       {/* Expanded Section Content */}
       {activeSection === "tools" && (
         <section className="section-padding bg-tsuv-surface">
-          <div className="mx-auto max-w-7xl space-y-12">
+          <div className="mx-auto max-w-7xl space-y-10">
             <div>
               <h2 className="mb-6 flex items-center gap-2 font-display text-xl font-bold"><Calculator className="h-5 w-5 text-secondary" /> Financial Calculators</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{financialTools.map((t) => <ToolCard key={t.name} {...t} />)}</div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {financialTools.map((t) => (
+                  <Link key={t.name} to={t.path} className="tool-card group flex flex-col">
+                    <Calculator className="mb-3 h-6 w-6 text-secondary" />
+                    <h4 className="mb-1 font-display text-sm font-semibold group-hover:text-secondary">{t.name}</h4>
+                    <p className="flex-1 text-xs text-muted-foreground">{t.desc}</p>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">Open Tool <ArrowRight size={12} /></span>
+                  </Link>
+                ))}
+              </div>
             </div>
             <div>
               <h2 className="mb-6 flex items-center gap-2 font-display text-xl font-bold"><BarChart3 className="h-5 w-5 text-secondary" /> Market & Growth Tools</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{marketTools.map((t) => <ToolCard key={t.name} {...t} />)}</div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {marketTools.map((t) => (
+                  <Link key={t.name} to={t.path} className="tool-card group flex flex-col">
+                    <BarChart3 className="mb-3 h-6 w-6 text-secondary" />
+                    <h4 className="font-display text-sm font-semibold group-hover:text-secondary">{t.name}</h4>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">Open Tool <ArrowRight size={12} /></span>
+                  </Link>
+                ))}
+              </div>
             </div>
             <div>
               <h2 className="mb-6 flex items-center gap-2 font-display text-xl font-bold"><Wallet className="h-5 w-5 text-secondary" /> Capital Planning</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{capitalTools.map((t) => <ToolCard key={t.name} {...t} />)}</div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {capitalTools.map((t) => (
+                  <Link key={t.name} to={t.path} className="tool-card group flex flex-col">
+                    <Wallet className="mb-3 h-6 w-6 text-secondary" />
+                    <h4 className="font-display text-sm font-semibold group-hover:text-secondary">{t.name}</h4>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">Open Tool <ArrowRight size={12} /></span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -173,7 +210,16 @@ const Resources = () => {
         <section className="section-padding bg-tsuv-surface">
           <div className="mx-auto max-w-7xl">
             <h2 className="mb-6 flex items-center gap-2 font-display text-xl font-bold"><ClipboardCheck className="h-5 w-5 text-secondary" /> Founder Assessments</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{assessmentsList.map((t) => <ToolCard key={t.name} {...t} />)}</div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {assessmentsList.map((t) => (
+                <Link key={t.name} to={t.path} className="tool-card group flex flex-col">
+                  <ClipboardCheck className="mb-3 h-6 w-6 text-secondary" />
+                  <h4 className="mb-1 font-display text-sm font-semibold group-hover:text-secondary">{t.name}</h4>
+                  <p className="flex-1 text-xs text-muted-foreground">{t.desc}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">Take Assessment <ArrowRight size={12} /></span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}
@@ -231,20 +277,66 @@ const Resources = () => {
         </section>
       )}
 
-      {/* Featured Tools */}
+      {/* ═══ SECTION 2: Featured Report Banner ═══ */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">
-            Featured <span className="text-secondary">Tools</span>
+            Deep-Dive <span className="text-secondary">Insights</span>
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {featuredTools.map((ft) => (
-              <Link key={ft.name} to={ft.path} className="tool-card group flex flex-col items-start">
-                <ft.icon className="mb-4 h-8 w-8 text-secondary" />
-                <h3 className="mb-1 font-display text-lg font-semibold group-hover:text-secondary">{ft.name}</h3>
-                <p className="flex-1 text-sm text-muted-foreground">{ft.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-secondary">
-                  Try Now <ArrowRight size={14} />
+          {/* Featured Report */}
+          <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-[hsl(198,100%,12%)] to-[hsl(198,80%,22%)] p-10 md:p-14">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-xl">
+                <span className="mb-3 inline-block rounded-full bg-secondary/20 px-3 py-1 text-xs font-semibold text-secondary">Featured Report</span>
+                <h3 className="mb-3 font-display text-2xl font-bold text-white md:text-3xl">
+                  India Tier II/III Startup Ecosystem Report 2026
+                </h3>
+                <p className="text-sm text-white/70">
+                  A comprehensive analysis of emerging startup hubs beyond metros — market opportunity, founder demographics, sector trends, and investment flows across Bharat.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <span className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 font-semibold text-secondary-foreground cursor-pointer hover:bg-secondary/90">
+                  <FileText size={18} /> Read Report
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Market Reports Grid */}
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              { title: "SaaS Growth Benchmarks — India 2026", tag: "SaaS" },
+              { title: "AgriTech Investment Landscape", tag: "AgriTech" },
+              { title: "HealthTech Founder Playbook", tag: "HealthTech" },
+            ].map((r) => (
+              <div key={r.title} className="tool-card group cursor-pointer">
+                <span className="mb-3 inline-block rounded-full bg-secondary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-secondary">{r.tag}</span>
+                <h4 className="mb-2 font-display text-sm font-semibold group-hover:text-secondary">{r.title}</h4>
+                <p className="text-xs text-muted-foreground">Coming soon</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SECTION 3: Featured Tools & Assessments ═══ */}
+      <section className="section-padding bg-tsuv-surface">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Featured Tools & <span className="text-secondary">Assessments</span>
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredCards.map((card) => (
+              <Link
+                key={card.name}
+                to={card.path}
+                className="group relative flex flex-col rounded-xl border-2 border-border bg-card p-6 transition-all duration-300 hover:border-secondary hover:shadow-xl"
+              >
+                <card.icon className="mb-4 h-10 w-10 text-secondary" />
+                <h3 className="mb-2 font-display text-base font-bold group-hover:text-secondary">{card.name}</h3>
+                <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primary group-hover:text-secondary">
+                  {card.cta} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
             ))}
@@ -252,26 +344,21 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Schedule / Cohort Dates */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="mb-6 font-display text-3xl font-bold">Upcoming <span className="text-secondary">Schedule</span></h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              { label: "Next Cohort Starts", value: "August 2026", sub: "Cohort 9" },
-              { label: "Application Deadline", value: "July 15, 2026", sub: "Apply early for priority review" },
-              { label: "Demo Day", value: "November 2026", sub: "Investor showcase event" },
-            ].map((d) => (
-              <div key={d.label} className="rounded-xl border border-primary-foreground/20 p-6">
-                <p className="text-xs uppercase tracking-wider text-primary-foreground/60">{d.label}</p>
-                <p className="mt-2 font-display text-2xl font-bold text-secondary">{d.value}</p>
-                <p className="mt-1 text-sm text-primary-foreground/70">{d.sub}</p>
-              </div>
+      {/* ═══ SECTION 4: FAQs ═══ */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <details key={i} className="group rounded-lg border border-border bg-card">
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-display text-sm font-semibold">
+                  {f.q}
+                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
+              </details>
             ))}
           </div>
-          <Link to="/apply" className="mt-8 inline-flex items-center gap-2 rounded-md bg-secondary px-6 py-3 font-semibold text-secondary-foreground hover:bg-secondary/90">
-            Apply Now <ArrowRight size={16} />
-          </Link>
         </div>
       </section>
     </PageLayout>
