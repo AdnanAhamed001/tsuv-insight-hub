@@ -10,7 +10,6 @@ import {
 const hubCards = [
   {
     id: "tools",
-    emoji: "🧰",
     title: "Tools",
     subtitle: "Calculators & Financial Models",
     desc: "Equity dilution, runway, market sizing, LTV, IRR, and more — built for early-stage startups.",
@@ -19,7 +18,6 @@ const hubCards = [
   },
   {
     id: "assessments",
-    emoji: "📋",
     title: "Assessments",
     subtitle: "Readiness & Health Checks",
     desc: "Structured quizzes to score your startup's health, fundraising readiness, and idea strength.",
@@ -28,7 +26,6 @@ const hubCards = [
   },
   {
     id: "reports",
-    emoji: "📊",
     title: "Reports",
     subtitle: "Market Insights & Case Studies",
     desc: "Deep-dive sector analysis, strategic playbooks, and founder case studies.",
@@ -37,7 +34,6 @@ const hubCards = [
   },
   {
     id: "pr",
-    emoji: "📰",
     title: "PR Activity",
     subtitle: "Press Mentions & Awards",
     desc: "Press coverage, announcements, media features, and ecosystem recognition.",
@@ -46,7 +42,6 @@ const hubCards = [
   },
   {
     id: "videos",
-    emoji: "🎥",
     title: "Videos",
     subtitle: "Demo Days & Masterclasses",
     desc: "Pitch recordings, investor showcase events, and founder masterclasses.",
@@ -55,7 +50,6 @@ const hubCards = [
   },
   {
     id: "podcasts",
-    emoji: "🎙️",
     title: "Podcasts",
     subtitle: "Interviews & Ecosystem Audio",
     desc: "Conversations with the executive team, coaches, and successful founders.",
@@ -146,7 +140,7 @@ const Resources = () => {
                 {/* Overlay for readability */}
                 <div className="absolute inset-0 bg-black/20 transition-all group-hover:bg-black/30" />
                 <div className="relative z-10">
-                  <span className="mb-2 block text-3xl">{card.emoji}</span>
+                  <card.icon className="mb-2 h-8 w-8 text-white/80" />
                   <h3 className="font-display text-2xl font-bold text-white">{card.title}</h3>
                   <p className="mt-0.5 text-sm font-medium text-white/80">{card.subtitle}</p>
                   <p className="mt-2 text-xs text-white/60 line-clamp-2">{card.desc}</p>
