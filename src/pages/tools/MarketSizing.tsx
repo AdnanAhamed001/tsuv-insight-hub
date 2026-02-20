@@ -16,7 +16,7 @@ const MarketSizing = () => {
   const labelClass = "mb-1 block text-xs font-medium text-muted-foreground";
 
   return (
-    <ToolLayout title="Market Sizing Tool (TAM / SAM / SOM)" description="Quantify your total market opportunity." breadcrumb="Market Sizing" cta={{ text: "Validate your idea", link: "/resources/idea-validator" }}>
+    <ToolLayout title="Market Sizing Tool (TAM / SAM / SOM)" description="" breadcrumb="Market Sizing" cta={{ text: "Validate your idea", link: "/resources/idea-validator" }}>
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="space-y-4">
           <div><label className={labelClass}>Total Potential Customers</label><input type="number" className={inputClass} value={totalCustomers} onChange={(e) => setTotalCustomers(+e.target.value)} /></div>
