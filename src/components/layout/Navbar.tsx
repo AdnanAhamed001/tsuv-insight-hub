@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import tsuvLogo from "@/assets/tsuv-logo.svg";
 
 const navLinks = [
@@ -9,7 +9,18 @@ const navLinks = [
   { name: "Apply", path: "/apply" },
   { name: "Investor Hub", path: "/investor-hub" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Resources", path: "/resources" },
+  {
+    name: "Resources",
+    path: "/resources",
+    dropdown: [
+      { name: "All Resources", path: "/resources" },
+      { name: "Equity Dilution Calculator", path: "/resources/equity-dilution" },
+      { name: "Runway & Burn Rate", path: "/resources/runway-burn-rate" },
+      { name: "Startup Health Check", path: "/resources/startup-health-check" },
+      { name: "Fundraising Readiness", path: "/resources/fundraising-readiness" },
+      { name: "Capital Deployment Planner", path: "/resources/capital-deployment" },
+    ],
+  },
   { name: "About Us", path: "/about" },
   { name: "People", path: "/people" },
   { name: "Contact Us", path: "/contact" },
@@ -17,6 +28,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   return (
@@ -27,27 +39,66 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                location.pathname === link.path
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground/70 hover:bg-muted hover:text-foreground"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-0.5 lg:flex">
+          {navLinks.map((link) =>
+            link.dropdown ? (
+              <div
+                key={link.path}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(link.name)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <Link
+                  to={link.path}
+                  className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname.startsWith(link.path)
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground/70 hover:bg-muted hover:text-foreground"
+                  }`}
+                >
+                  {link.name}
+                  <ChevronDown className="h-3 w-3" />
+                </Link>
+                {openDropdown === link.name && (
+                  <div className="absolute left-0 top-full z-50 w-64 rounded-lg border border-border bg-card py-2 shadow-lg">
+                    {link.dropdown.map((sub) => (
+                      <Link
+                        key={sub.path}
+                        to={sub.path}
+                        className="block px-4 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                  location.pathname === link.path
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/70 hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
+          )}
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="rounded-md p-2 text-foreground lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}
+        {/* CTA */}
+        <Link
+          to="/apply"
+          className="hidden rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground hover:bg-secondary/90 lg:inline-flex"
         >
+          Apply ↗
+        </Link>
+
+        {/* Mobile Toggle */}
+        <button className="rounded-md p-2 text-foreground lg:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -56,18 +107,33 @@ const Navbar = () => {
       {isOpen && (
         <div className="border-t border-border bg-background px-4 py-4 lg:hidden">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={`block rounded-md px-3 py-2 text-sm font-medium ${
-                location.pathname === link.path
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground/70 hover:bg-muted"
-              }`}
-            >
-              {link.name}
-            </Link>
+            <div key={link.path}>
+              <Link
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`block rounded-md px-3 py-2 text-sm font-medium ${
+                  location.pathname === link.path
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/70 hover:bg-muted"
+                }`}
+              >
+                {link.name}
+              </Link>
+              {link.dropdown && (
+                <div className="ml-4 space-y-1">
+                  {link.dropdown.slice(1).map((sub) => (
+                    <Link
+                      key={sub.path}
+                      to={sub.path}
+                      onClick={() => setIsOpen(false)}
+                      className="block rounded-md px-3 py-1.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
