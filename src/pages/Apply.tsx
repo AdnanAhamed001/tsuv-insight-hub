@@ -1,6 +1,21 @@
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
-import { ArrowRight, ArrowLeft, Upload } from "lucide-react";
+import { ArrowRight, ArrowLeft, Upload, Calendar, ChevronDown } from "lucide-react";
+
+const cohortDates = [
+  { label: "Application Deadline", value: "July 15, 2026" },
+  { label: "Interview Window", value: "July 16 – July 30, 2026" },
+  { label: "Cohort Kickoff", value: "August 4, 2026" },
+  { label: "Demo Day", value: "November 2026" },
+];
+
+const faqs = [
+  { q: "Who can apply?", a: "Founders with an MVP or early revenue from any sector — we focus on Tier II & III cities but accept all." },
+  { q: "What documents do I need?", a: "Pitch deck (PDF), a one-line pitch, basic traction data, and optionally a 1-minute video pitch." },
+  { q: "Is there an application fee?", a: "No application fee. Equity and fee arrangements are discussed only after selection." },
+  { q: "When will I hear back?", a: "Within 2 weeks of the application deadline. Shortlisted founders are invited for interviews." },
+  { q: "Can I re-apply if not selected?", a: "Yes, you can apply again for the next cohort with updated progress." },
+];
 
 const Apply = () => {
   const [step, setStep] = useState(1);
@@ -21,16 +36,35 @@ const Apply = () => {
 
   return (
     <PageLayout>
-      <section className="hero-gradient section-padding py-16">
+      <section className="hero-gradient section-padding py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <h1 className="mb-2 font-display text-4xl font-bold text-primary-foreground">APPLY FOR THE TSUV COHORT</h1>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">Applications Open</p>
+          <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
+            Apply for the TSUV <span className="text-secondary">Cohort</span>
+          </h1>
           <p className="text-primary-foreground/70">Join Bharat's most dedicated startup accelerator.</p>
-          <div className="mt-4 rounded-md bg-secondary/20 px-4 py-2 text-sm text-secondary">
-            Applications are currently open. Apply before the deadline to secure your spot.
+        </div>
+      </section>
+
+      {/* Important Dates */}
+      <section className="section-padding bg-tsuv-surface">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 flex items-center justify-center gap-2">
+            <Calendar className="h-5 w-5 text-secondary" />
+            <h2 className="font-display text-xl font-bold">Important Dates</h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+            {cohortDates.map((d) => (
+              <div key={d.label} className="rounded-lg border border-border bg-card p-4 text-center">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">{d.label}</p>
+                <p className="mt-1 font-display text-base font-bold text-primary">{d.value}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Application Form */}
       <section className="section-padding">
         <div className="mx-auto max-w-2xl">
           {/* Step Indicator */}
@@ -135,12 +169,30 @@ const Apply = () => {
             {[
               { week: "Week 1", desc: "Application Review & Initial Due Diligence" },
               { week: "Week 2", desc: "Founder Interviews" },
-              { week: "Week 3", desc: "Final Cohort Selection" },
+              { week: "Week 3", desc: "Final Cohort Selection & Onboarding" },
             ].map((w) => (
               <div key={w.week} className="flex items-center gap-4 rounded-lg border border-border bg-card px-6 py-4">
                 <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">{w.week}</span>
                 <span className="text-sm text-foreground">{w.desc}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <details key={i} className="group rounded-lg border border-border bg-card">
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-display text-sm font-semibold">
+                  {f.q}
+                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>
