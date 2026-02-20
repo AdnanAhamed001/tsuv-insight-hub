@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Program from "./pages/Program";
@@ -28,6 +29,12 @@ import CustomerPayback from "./pages/tools/CustomerPayback";
 import RuleOf40 from "./pages/tools/RuleOf40";
 import BurnMultiple from "./pages/tools/BurnMultiple";
 import CapitalDeployment from "./pages/tools/CapitalDeployment";
+import ToolsPage from "./pages/resources/ToolsPage";
+import AssessmentsPage from "./pages/resources/AssessmentsPage";
+import ReportsPage from "./pages/resources/ReportsPage";
+import PRActivityPage from "./pages/resources/PRActivityPage";
+import VideosPage from "./pages/resources/VideosPage";
+import PodcastsPage from "./pages/resources/PodcastsPage";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +44,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/program" element={<Program />} />
@@ -47,6 +55,13 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/people" element={<People />} />
           <Route path="/contact" element={<ContactUs />} />
+          {/* Resource Category Pages */}
+          <Route path="/resources/tools" element={<ToolsPage />} />
+          <Route path="/resources/assessments" element={<AssessmentsPage />} />
+          <Route path="/resources/reports" element={<ReportsPage />} />
+          <Route path="/resources/pr-activity" element={<PRActivityPage />} />
+          <Route path="/resources/videos" element={<VideosPage />} />
+          <Route path="/resources/podcasts" element={<PodcastsPage />} />
           {/* Tools */}
           <Route path="/resources/equity-dilution" element={<EquityDilutionCalculator />} />
           <Route path="/resources/runway-burn-rate" element={<RunwayBurnRate />} />
