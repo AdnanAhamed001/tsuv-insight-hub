@@ -14,6 +14,7 @@ import Resources from "./pages/Resources";
 import AboutUs from "./pages/AboutUs";
 import People from "./pages/People";
 import ContactUs from "./pages/ContactUs";
+import Blog from "./pages/Blog";
 import EquityDilutionCalculator from "./pages/tools/EquityDilutionCalculator";
 import RunwayBurnRate from "./pages/tools/RunwayBurnRate";
 import MarketSizing from "./pages/tools/MarketSizing";
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/people" element={<People />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/blog" element={<Blog />} />
           {/* Resource Category Pages */}
           <Route path="/resources/tools" element={<ToolsPage />} />
           <Route path="/resources/assessments" element={<AssessmentsPage />} />

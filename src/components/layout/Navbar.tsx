@@ -6,7 +6,6 @@ import tsuvLogo from "@/assets/tsuv-logo.svg";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Program", path: "/program" },
-  { name: "Apply", path: "/apply" },
   { name: "Investor Hub", path: "/investor-hub" },
   { name: "Portfolio", path: "/portfolio" },
   {
@@ -24,6 +23,7 @@ const navLinks = [
   },
   { name: "About Us", path: "/about" },
   { name: "People", path: "/people" },
+  { name: "Blog", path: "/blog" },
   { name: "Contact Us", path: "/contact" },
 ];
 
