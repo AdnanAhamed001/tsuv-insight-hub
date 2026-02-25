@@ -17,7 +17,7 @@ import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import EquityDilutionCalculator from "./pages/tools/EquityDilutionCalculator";
 import RunwayBurnRate from "./pages/tools/RunwayBurnRate";
-import MarketSizing from "./pages/tools/MarketSizing";
+
 import ExitScenario from "./pages/tools/ExitScenario";
 import BreakEven from "./pages/tools/BreakEven";
 import BerkusMethod from "./pages/tools/BerkusMethod";
@@ -67,7 +67,7 @@ const App = () => (
           {/* Tools */}
           <Route path="/resources/equity-dilution" element={<EquityDilutionCalculator />} />
           <Route path="/resources/runway-burn-rate" element={<RunwayBurnRate />} />
-          <Route path="/resources/market-sizing" element={<MarketSizing />} />
+          
           <Route path="/resources/exit-scenario" element={<ExitScenario />} />
           <Route path="/resources/break-even" element={<BreakEven />} />
           <Route path="/resources/berkus-method" element={<BerkusMethod />} />
