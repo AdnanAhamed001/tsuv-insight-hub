@@ -36,6 +36,15 @@ const ToolLayout = ({ title, description, breadcrumb, children, cta }: ToolLayou
         <div className="mx-auto max-w-7xl">{children}</div>
       </section>
 
+      {/* Disclaimer */}
+      <section className="section-padding pt-0">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-lg border border-border bg-muted/50 px-4 py-3 text-xs text-muted-foreground">
+            <strong>Disclaimer:</strong> This tool provides a basic indicative estimate for educational purposes only. It does not constitute financial, legal, or investment advice. Actual results may vary significantly based on market conditions, assumptions, and other factors. Please consult a qualified professional before making any business or investment decisions.
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       {cta && (
         <section className="section-padding bg-primary text-center text-primary-foreground">
