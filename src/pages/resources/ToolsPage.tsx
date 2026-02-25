@@ -12,7 +12,7 @@ const financialTools = [
 ];
 
 const marketTools = [
-  { name: "Market Sizing (TAM/SAM/SOM)", path: "/resources/market-sizing" },
+  
   { name: "Rule of 40 Calculator", path: "/resources/rule-of-40" },
   { name: "Burn Multiple Calculator", path: "/resources/burn-multiple" },
   { name: "LTV Calculator", path: "/resources/ltv-calculator" },
