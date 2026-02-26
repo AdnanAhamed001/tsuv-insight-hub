@@ -1,6 +1,6 @@
 import PageLayout from "@/components/layout/PageLayout";
 import { Link } from "react-router-dom";
-import { FileText } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
 
 const ReportsPage = () => (
   <PageLayout>
@@ -39,12 +39,17 @@ const ReportsPage = () => (
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {["Market Reports", "Founder Playbooks", "Case Studies", "Sector Analysis"].map((r) => (
-            <div key={r} className="tool-card">
+          {[
+            { name: "Market Reports", path: "/resources/reports/market-reports", desc: "Industry data, benchmarks, and investment trends." },
+            { name: "Founder Playbooks", path: "/resources/reports/founder-playbooks", desc: "Step-by-step guides for early-stage founders." },
+            { name: "Case Studies", path: "/resources/reports/case-studies", desc: "Real founder stories — lessons you can use." },
+            { name: "Sector Analysis", path: "/resources/reports/sector-analysis", desc: "Deep dives into specific industry verticals." },
+          ].map((r) => (
+            <Link key={r.name} to={r.path} className="tool-card group">
               <FileText className="mb-3 h-6 w-6 text-secondary" />
-              <h3 className="font-display text-base font-semibold">{r}</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Coming soon — downloadable insights and analysis.</p>
-            </div>
+              <h3 className="font-display text-base font-semibold group-hover:text-secondary">{r.name}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">{r.desc}</p>
+            </Link>
           ))}
         </div>
       </div>
