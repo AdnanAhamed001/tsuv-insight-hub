@@ -33,6 +33,10 @@ import CapitalDeployment from "./pages/tools/CapitalDeployment";
 import ToolsPage from "./pages/resources/ToolsPage";
 import AssessmentsPage from "./pages/resources/AssessmentsPage";
 import ReportsPage from "./pages/resources/ReportsPage";
+import MarketReportsPage from "./pages/resources/reports/MarketReportsPage";
+import FounderPlaybooksPage from "./pages/resources/reports/FounderPlaybooksPage";
+import CaseStudiesPage from "./pages/resources/reports/CaseStudiesPage";
+import SectorAnalysisPage from "./pages/resources/reports/SectorAnalysisPage";
 import PRActivityPage from "./pages/resources/PRActivityPage";
 import VideosPage from "./pages/resources/VideosPage";
 import PodcastsPage from "./pages/resources/PodcastsPage";
@@ -61,6 +65,10 @@ const App = () => (
           <Route path="/resources/tools" element={<ToolsPage />} />
           <Route path="/resources/assessments" element={<AssessmentsPage />} />
           <Route path="/resources/reports" element={<ReportsPage />} />
+          <Route path="/resources/reports/market-reports" element={<MarketReportsPage />} />
+          <Route path="/resources/reports/founder-playbooks" element={<FounderPlaybooksPage />} />
+          <Route path="/resources/reports/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/resources/reports/sector-analysis" element={<SectorAnalysisPage />} />
           <Route path="/resources/pr-activity" element={<PRActivityPage />} />
           <Route path="/resources/videos" element={<VideosPage />} />
           <Route path="/resources/podcasts" element={<PodcastsPage />} />
