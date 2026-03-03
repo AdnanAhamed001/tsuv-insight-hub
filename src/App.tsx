@@ -15,9 +15,11 @@ import AboutUs from "./pages/AboutUs";
 import People from "./pages/People";
 import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import Disclaimer from "./pages/Disclaimer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import EquityDilutionCalculator from "./pages/tools/EquityDilutionCalculator";
 import RunwayBurnRate from "./pages/tools/RunwayBurnRate";
-
 import ExitScenario from "./pages/tools/ExitScenario";
 import BreakEven from "./pages/tools/BreakEven";
 import BerkusMethod from "./pages/tools/BerkusMethod";
@@ -61,6 +63,9 @@ const App = () => (
           <Route path="/people" element={<People />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* Resource Category Pages */}
           <Route path="/resources/tools" element={<ToolsPage />} />
           <Route path="/resources/assessments" element={<AssessmentsPage />} />
@@ -75,7 +80,6 @@ const App = () => (
           {/* Tools */}
           <Route path="/resources/equity-dilution" element={<EquityDilutionCalculator />} />
           <Route path="/resources/runway-burn-rate" element={<RunwayBurnRate />} />
-          
           <Route path="/resources/exit-scenario" element={<ExitScenario />} />
           <Route path="/resources/break-even" element={<BreakEven />} />
           <Route path="/resources/berkus-method" element={<BerkusMethod />} />

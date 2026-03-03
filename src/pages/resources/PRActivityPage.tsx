@@ -33,10 +33,11 @@ const PRActivityPage = () => (
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {articles.map((a, i) => (
-            <div key={i} className="tool-card">
+            <div key={i} className="tool-card group cursor-pointer">
               <TrendingUp className="mb-3 h-6 w-6 text-secondary" />
-              <h3 className="mb-2 font-display text-sm font-semibold">{a.title}</h3>
-              <p className="text-xs text-muted-foreground">{a.desc}</p>
+              <h3 className="mb-2 font-display text-sm font-semibold group-hover:text-secondary">{a.title}</h3>
+              <p className="mb-3 text-xs text-muted-foreground">{a.desc}</p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:text-secondary">Open Article →</span>
             </div>
           ))}
         </div>

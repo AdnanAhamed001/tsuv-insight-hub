@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import tsuvLogo from "@/assets/tsuv-logo.svg";
 
+const socialLinks = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/the-step-up-ventures/", icon: "in" },
+  { name: "Instagram", url: "https://www.instagram.com/thestepupventures/", icon: "ig" },
+  { name: "Facebook", url: "https://www.facebook.com/p/The-StepUp-Ventures-100063871641779/", icon: "fb" },
+  { name: "Twitter", url: "https://twitter.com/step_ventures", icon: "tw" },
+  { name: "F6S", url: "http://www.f6s.com/tsuv4/apply", icon: "f6s" },
+];
+
 const Footer = () => {
   return (
     <footer className="hero-gradient text-primary-foreground">
@@ -12,6 +20,14 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/70">
               The StepUp Ventures plans to connect Bharat with the rest of the world. It endeavours to ignite the entrepreneurial spirit in the youth of Bharat, thus contributing in creation of the 5 Trillion Dollar economy.
             </p>
+            {/* Social Media */}
+            <div className="mt-4 flex gap-3">
+              {socialLinks.map((s) => (
+                <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-foreground/10 text-xs font-bold text-primary-foreground/70 transition-colors hover:bg-secondary hover:text-secondary-foreground" title={s.name}>
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Our Pages */}
@@ -38,9 +54,9 @@ const Footer = () => {
           <div>
             <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-secondary">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><span className="text-primary-foreground/70 cursor-pointer hover:text-secondary">FAQ Page</span></li>
-              <li><span className="text-primary-foreground/70 cursor-pointer hover:text-secondary">Disclaimer</span></li>
-              <li><span className="text-primary-foreground/70 cursor-pointer hover:text-secondary">Privacy Policy</span></li>
+              <li><Link to="/faq" className="text-primary-foreground/70 transition-colors hover:text-secondary">FAQ Page</Link></li>
+              <li><Link to="/disclaimer" className="text-primary-foreground/70 transition-colors hover:text-secondary">Disclaimer</Link></li>
+              <li><Link to="/privacy-policy" className="text-primary-foreground/70 transition-colors hover:text-secondary">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -60,8 +76,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/10 pt-6 text-center text-sm text-primary-foreground/50">
-          © 2022 THE STEPUP VENTURE. All rights reserved.
+        <div className="mt-12 flex flex-col items-center gap-2 border-t border-primary-foreground/10 pt-6 text-center text-sm text-primary-foreground/50 sm:flex-row sm:justify-between">
+          <span>© 2022 THE STEPUP VENTURE. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link to="/disclaimer" className="hover:text-secondary">Legal</Link>
+            <Link to="/privacy-policy" className="hover:text-secondary">Privacy</Link>
+          </div>
         </div>
       </div>
     </footer>
