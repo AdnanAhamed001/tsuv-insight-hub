@@ -1,15 +1,9 @@
 import PageLayout from "@/components/layout/PageLayout";
+import HeroCarousel from "@/components/home/HeroCarousel";
+import AnimatedMilestones from "@/components/home/AnimatedMilestones";
+import MeetTheTeam from "@/components/home/MeetTheTeam";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, GraduationCap, TrendingUp, Globe, Rocket, BarChart3 } from "lucide-react";
-
-const milestones = [
-  { label: "Allies", value: "85+" },
-  { label: "Startups Incubated", value: "65" },
-  { label: "Combined Valuation", value: "INR 700+ Cr" },
-  { label: "Applications", value: "4,500+" },
-  { label: "Cities Reached", value: "190+" },
-  { label: "Professionals in TSV Network", value: "2,500+" },
-];
+import { ArrowRight } from "lucide-react";
 
 const ecosystemPartners = [
   "Artha Venture Fund", "Ennovent", "Anchor Capital", "Pentathlon Ventures", "Callapina Capital",
@@ -47,48 +41,14 @@ const newsFeed = [
 const Index = () => {
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="hero-gradient section-padding relative overflow-hidden py-24 md:py-32">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-sm font-medium text-primary-foreground/70">Pan India focus on entrepreneurs from real Bharat — emphasis on underrepresented & underprivileged communities.</p>
-          <h1 className="mb-6 font-display text-4xl font-bold tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
-            ACCELERATING<br />
-            <span className="text-secondary">BHARAT'S FOUNDERS.</span>
-          </h1>
-          <div className="mb-8 flex flex-wrap gap-6 text-sm text-primary-foreground/80">
-            <span><strong className="text-secondary">4500+</strong> Applications from <strong className="text-secondary">190+</strong> Cities</span>
-            <span><strong className="text-secondary">65</strong> Startups | <strong className="text-secondary">INR 700+ Cr</strong> Valuation</span>
-          </div>
-          <p className="mb-12 max-w-2xl text-primary-foreground/70">
-            Tailored 3-month program to help startups become Investor Ready.
-          </p>
-
-          {/* Gateway Blocks */}
-          <div className="grid gap-6 md:grid-cols-2 lg:max-w-3xl">
-            <div className="rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 backdrop-blur">
-              <Rocket className="mb-3 h-8 w-8 text-secondary" />
-              <h3 className="mb-2 font-display text-lg font-semibold text-primary-foreground">For Founders</h3>
-              <p className="mb-4 text-sm text-primary-foreground/70">If you are a startup looking to scale, we will be Happy to help.</p>
-              <Link to="/program" className="inline-flex items-center gap-2 rounded-md bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-secondary/90">
-                Explore the Program <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 backdrop-blur">
-              <BarChart3 className="mb-3 h-8 w-8 text-secondary" />
-              <h3 className="mb-2 font-display text-lg font-semibold text-primary-foreground">For Investors</h3>
-              <p className="mb-4 text-sm text-primary-foreground/70">Partner with us to back category-defining companies for Bharat and beyond.</p>
-              <Link to="/investor-hub" className="inline-flex items-center gap-2 rounded-md border border-secondary bg-transparent px-5 py-2.5 text-sm font-semibold text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground">
-                Enter Investor Hub <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroCarousel />
 
       {/* Featured Portfolio */}
       <section className="section-padding bg-tsuv-surface">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-8 text-center font-display text-3xl font-bold">Featured <span className="text-secondary">Portfolio</span></h2>
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Featured <span className="text-secondary">Portfolio</span>
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredPortfolio.map((s) => (
               <Link key={s.name} to="/portfolio" className="tool-card group">
@@ -103,22 +63,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Milestones */}
-      <section className="section-padding">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 text-center font-display text-3xl font-bold md:text-4xl">
-            OUR <span className="text-secondary">MILESTONES</span>
-          </h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {milestones.map((m) => (
-              <div key={m.label} className="rounded-xl border border-border bg-card p-6 text-center shadow-sm">
-                <span className="block font-display text-2xl font-bold text-primary md:text-3xl">{m.value}</span>
-                <span className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">{m.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AnimatedMilestones />
 
       {/* About Preview */}
       <section className="section-padding bg-tsuv-surface">
@@ -150,13 +95,19 @@ const Index = () => {
         </div>
       </section>
 
+      <MeetTheTeam />
+
       {/* Ecosystem Partners */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 text-center font-display text-3xl font-bold">Ecosystem <span className="text-secondary">Partners</span></h2>
+          <h2 className="mb-10 text-center font-display text-3xl font-bold">
+            Ecosystem <span className="text-secondary">Partners</span>
+          </h2>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {ecosystemPartners.map((p) => (
-              <div key={p} className="rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-sm">{p}</div>
+              <div key={p} className="rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-sm">
+                {p}
+              </div>
             ))}
           </div>
         </div>
@@ -165,22 +116,31 @@ const Index = () => {
       {/* Service Partners */}
       <section className="section-padding bg-tsuv-surface">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-8 text-center font-display text-2xl font-bold">Service <span className="text-secondary">Partners</span></h2>
+          <h2 className="mb-8 text-center font-display text-2xl font-bold">
+            Service <span className="text-secondary">Partners</span>
+          </h2>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {servicePartners.map((p) => (
-              <div key={p} className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm">{p}</div>
+              <div key={p} className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm">
+                {p}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Strip */}
-      <section className="section-padding bg-primary text-primary-foreground text-center">
+      <section className="section-padding bg-primary text-center text-primary-foreground">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-6 font-display text-2xl font-bold md:text-3xl">If you are a startup looking to scale, we will be happy to help.</h2>
-          <a href="https://www.f6s.com/the-stepup-ventures/connect" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-secondary px-6 py-3 font-semibold text-secondary-foreground hover:bg-secondary/90">
+          <h2 className="mb-6 font-display text-2xl font-bold md:text-3xl">
+            If you are a startup looking to scale, we will be happy to help.
+          </h2>
+          <Link
+            to="/apply"
+            className="inline-flex items-center gap-2 rounded-md bg-secondary px-6 py-3 font-semibold text-secondary-foreground hover:bg-secondary/90"
+          >
             Apply Now <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </section>
 

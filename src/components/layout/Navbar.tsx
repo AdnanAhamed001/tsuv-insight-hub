@@ -91,14 +91,12 @@ const Navbar = () => {
         </div>
 
         {/* CTA */}
-        <a
-          href="https://www.f6s.com/the-stepup-ventures/connect"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/apply"
           className="hidden rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground hover:bg-secondary/90 lg:inline-flex"
         >
-          Apply ↗
-        </a>
+          Apply
+        </Link>
 
         {/* Mobile Toggle */}
         <button className="rounded-md p-2 text-foreground lg:hidden" onClick={() => setIsOpen(!isOpen)}>
