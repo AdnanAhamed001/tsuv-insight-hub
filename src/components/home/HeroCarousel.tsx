@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Rocket, BarChart3 } from "lucide-react";
+import FounderMosaic from "./FounderMosaic";
 
 const slides = [
   {
@@ -35,10 +36,13 @@ const HeroCarousel = () => {
   const slide = slides[current];
 
   return (
-    <section className="hero-gradient section-padding relative overflow-hidden py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        {/* Slide content with fade transition */}
-        <div key={current} className="animate-fade-in">
+    <section className="hero-gradient relative overflow-hidden">
+      <div className="mx-auto max-w-7xl section-padding py-24 md:py-32">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          {/* Left: Text content */}
+          <div>
+            {/* Slide content with fade transition */}
+            <div key={current} className="animate-fade-in">
           <p className="mb-4 text-sm font-medium text-primary-foreground/70">
             {slide.subtitle}
           </p>
@@ -110,6 +114,13 @@ const HeroCarousel = () => {
             >
               Enter Investor Hub <ArrowRight size={16} />
             </Link>
+          </div>
+        </div>
+          </div>
+
+          {/* Right: 3D Floating Mosaic */}
+          <div className="hidden lg:block">
+            <FounderMosaic />
           </div>
         </div>
       </div>
