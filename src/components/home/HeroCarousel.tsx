@@ -127,12 +127,14 @@ const HeroCarousel = () => {
                   loop
                   muted
                   playsInline
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover opacity-60"
                 >
                   <source src="/videos/hero-video.mp4" type="video/mp4" />
                 </video>
-                {/* Subtle overlay for blending */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+                {/* VC-style gradient overlay: dark teal/blue (left) to warm golden yellow (right) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-900/70 via-blue-900/50 to-yellow-500/60" />
+                {/* Additional dimming layer for smooth blending */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/40" />
               </div>
             </div>
           </div>
