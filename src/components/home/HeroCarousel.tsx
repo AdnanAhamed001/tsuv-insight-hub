@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Rocket, BarChart3 } from "lucide-react";
+import { ArrowRight, Rocket, ChartBar as BarChart3 } from "lucide-react";
 const slides = [
   {
     headline: "ACCELERATING",
