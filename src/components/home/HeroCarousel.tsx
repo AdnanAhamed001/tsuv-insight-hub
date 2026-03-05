@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Rocket, BarChart3 } from "lucide-react";
-import FounderMosaic from "./FounderMosaic";
-
 const slides = [
   {
     headline: "ACCELERATING",
@@ -118,9 +116,25 @@ const HeroCarousel = () => {
         </div>
           </div>
 
-          {/* Right: 3D Floating Mosaic */}
-          <div className="hidden lg:block">
-            <FounderMosaic />
+          {/* Right: Hero Video */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="relative w-full max-w-lg">
+              {/* Glow effect behind video */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/20 blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-primary-foreground/10 shadow-2xl shadow-secondary/10">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover"
+                >
+                  <source src="/videos/hero-video.mp4" type="video/mp4" />
+                </video>
+                {/* Subtle overlay for blending */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
