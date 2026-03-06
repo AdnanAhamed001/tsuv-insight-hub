@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { MapPin } from "lucide-react";
 
 const startups = [
   { name: "Freshleaf", city: "Ludhiana", x: 30, y: 18 },
@@ -103,40 +102,6 @@ const IndiaStartupMap = () => {
                 />
               )}
 
-              {/* Premium startup card */}
-              {isActive && (
-                <div
-                  className={`absolute z-20 whitespace-nowrap ${
-                    cardOnLeft
-                      ? "right-5 -top-4"
-                      : "left-5 -top-4"
-                  }`}
-                  style={{
-                    animation: "card-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
-                  }}
-                >
-                  <div className="rounded-xl border border-secondary/30 bg-gradient-to-br from-primary/95 to-primary/80 backdrop-blur-md px-3.5 py-2.5 shadow-xl shadow-secondary/15">
-                    {/* Location icon + startup name */}
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <MapPin className="h-3 w-3 text-secondary" />
-                      <p className="text-xs font-bold text-secondary tracking-wide">
-                        {startup.name}
-                      </p>
-                    </div>
-                    <p className="text-[10px] text-primary-foreground/70 pl-[18px]">
-                      {startup.city}, India
-                    </p>
-                  </div>
-                  {/* Connector line */}
-                  <div
-                    className={`absolute top-1/2 w-3 h-px bg-secondary/50 ${
-                      cardOnLeft
-                        ? "right-0 translate-x-full"
-                        : "left-0 -translate-x-full"
-                    }`}
-                  />
-                </div>
-              )}
             </div>
           );
         })}
@@ -169,19 +134,6 @@ const IndiaStartupMap = () => {
         </svg>
       </div>
 
-      {/* Card pop animation */}
-      <style>{`
-        @keyframes card-pop {
-          0% {
-            opacity: 0;
-            transform: scale(0.8) translateY(4px);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };
