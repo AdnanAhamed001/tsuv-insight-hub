@@ -6,7 +6,7 @@ const startups = [
   { name: "Daan Veda", city: "Noida", x: 39, y: 27 },
   { name: "Nario", city: "Delhi", x: 37, y: 24 },
   { name: "Boingg", city: "Gurgaon", x: 36, y: 26 },
-  { name: "Kamikala", city: "Kalimpong", x: 62, y: 30 },
+  { name: "Kamikala", city: "Kalimpong", x: 55, y: 32 },
   { name: "ExtraMile Play", city: "Mumbai", x: 28, y: 50 },
   { name: "Bioreform", city: "Hyderabad", x: 38, y: 58 },
   { name: "Alchemyst AI", city: "Bengaluru", x: 35, y: 70 },
