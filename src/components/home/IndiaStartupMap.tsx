@@ -78,28 +78,30 @@ const IndiaStartupMap = () => {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {/* Pulse ring */}
-              {isActive && (
+              {/* Pulse ring - hidden */}
+              {false && isActive && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="h-7 w-7 rounded-full bg-secondary/40 animate-ping" />
                 </div>
               )}
 
-              {/* Outer glow for visible nodes */}
-              {isVisible && (
+              {/* Outer glow for visible nodes - hidden */}
+              {false && isVisible && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="h-4 w-4 rounded-full bg-secondary/20 blur-sm" />
                 </div>
               )}
 
-              {/* Glowing node */}
-              <div
-                className={`relative z-10 rounded-full transition-all duration-700 ${
-                  isVisible
-                    ? "h-3 w-3 bg-secondary shadow-[0_0_12px_hsl(37_96%_62%/0.8)]"
-                    : "h-1.5 w-1.5 bg-secondary/30"
-                }`}
-              />
+              {/* Glowing node - hidden */}
+              {false && (
+                <div
+                  className={`relative z-10 rounded-full transition-all duration-700 ${
+                    isVisible
+                      ? "h-3 w-3 bg-secondary shadow-[0_0_12px_hsl(37_96%_62%/0.8)]"
+                      : "h-1.5 w-1.5 bg-secondary/30"
+                  }`}
+                />
+              )}
 
               {/* Premium startup card */}
               {isActive && (
