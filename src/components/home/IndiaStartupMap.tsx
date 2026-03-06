@@ -44,18 +44,18 @@ const IndiaStartupMap = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <div className="relative w-full max-w-[320px] md:max-w-[360px]">
-        {/* Ambient glow */}
-        <div className="absolute -inset-10 rounded-full bg-secondary/25 blur-3xl" />
-        <div className="absolute -inset-6 rounded-full bg-secondary/10 blur-2xl" />
+        {/* Ambient glow - teal and amber */}
+        <div className="absolute -inset-10 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute -inset-6 rounded-full bg-secondary/15 blur-2xl" />
 
-        {/* India map - golden tint */}
+        {/* India map - teal with amber accents */}
         <img
           src="/images/india-map.svg"
           alt="India map showing startup locations"
           className="relative w-full h-auto"
           style={{
-            filter: "brightness(1.6) saturate(1.2) sepia(0.4) hue-rotate(-10deg)",
-            opacity: 0.85,
+            filter: "brightness(1.3) saturate(1.3) hue-rotate(190deg)",
+            opacity: 0.9,
           }}
         />
 
