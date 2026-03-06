@@ -53,8 +53,8 @@ const IndiaStartupMap = () => {
         <img
           src="/images/india-map.svg"
           alt="India map showing startup locations"
-          className="relative w-full h-auto opacity-30"
-          style={{ filter: "hue-rotate(180deg) brightness(0.6) saturate(0.5)" }}
+           className="relative w-full h-auto opacity-60"
+           style={{ filter: "brightness(1.2) saturate(0.7)" }}
         />
 
         {/* Nodes and cards */}
