@@ -6,7 +6,7 @@ const startups = [
   { name: "Daan Veda", city: "Noida", x: 39, y: 27 },
   { name: "Nario", city: "Delhi", x: 37, y: 24 },
   { name: "Boingg", city: "Gurgaon", x: 36, y: 26 },
-  { name: "Kamikala", city: "Kalimpong", x: 62, y: 30 },
+  { name: "Kamikala", city: "Kalimpong", x: 55, y: 32 },
   { name: "ExtraMile Play", city: "Mumbai", x: 28, y: 50 },
   { name: "Bioreform", city: "Hyderabad", x: 38, y: 58 },
   { name: "Alchemyst AI", city: "Bengaluru", x: 35, y: 70 },
@@ -47,14 +47,15 @@ const IndiaStartupMap = () => {
       {/* Map container */}
       <div className="relative w-full max-w-[320px] md:max-w-[360px]">
         {/* Subtle glow behind map */}
-        <div className="absolute -inset-6 rounded-full bg-secondary/10 blur-3xl" />
+        <div className="absolute -inset-8 rounded-full bg-secondary/20 blur-2xl" />
+        <div className="absolute -inset-4 rounded-full bg-primary-foreground/5 blur-xl" />
         
         {/* India map SVG */}
         <img
           src="/images/india-map.svg"
           alt="India map showing startup locations"
-          className="relative w-full h-auto opacity-30"
-          style={{ filter: "hue-rotate(180deg) brightness(0.6) saturate(0.5)" }}
+           className="relative w-full h-auto opacity-60"
+           style={{ filter: "brightness(1.2) saturate(0.7)" }}
         />
 
         {/* Nodes and cards */}
