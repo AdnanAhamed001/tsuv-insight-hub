@@ -47,7 +47,8 @@ const IndiaStartupMap = () => {
       {/* Map container */}
       <div className="relative w-full max-w-[320px] md:max-w-[360px]">
         {/* Subtle glow behind map */}
-        <div className="absolute -inset-6 rounded-full bg-secondary/10 blur-3xl" />
+        <div className="absolute -inset-8 rounded-full bg-secondary/20 blur-2xl" />
+        <div className="absolute -inset-4 rounded-full bg-primary-foreground/5 blur-xl" />
         
         {/* India map SVG */}
         <img
