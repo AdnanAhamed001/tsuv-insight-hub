@@ -21,8 +21,6 @@ const navLinks = [
       { name: "Podcasts — Interviews & Ecosystem Audio", path: "/resources/podcasts" },
     ],
   },
-  { name: "About Us", path: "/about" },
-  { name: "People", path: "/people" },
   { name: "Blog", path: "/blog" },
   { name: "Contact Us", path: "/contact" },
 ];
