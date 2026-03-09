@@ -53,6 +53,11 @@ const Blog = () => {
       {/* Hero */}
       <section className="hero-gradient section-padding py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
+          <nav className="mb-6 text-sm text-primary-foreground/60">
+            <Link to="/" className="hover:text-secondary">Home</Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-primary-foreground">Blog</span>
+          </nav>
           <h1 className="mb-4 font-display text-4xl font-bold tracking-tight text-primary-foreground md:text-5xl">
             Blog
           </h1>
