@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const milestones = [
   { label: "Allies", value: 85, suffix: "+", prefix: "" },
   { label: "Startups Incubated", value: 65, suffix: "", prefix: "" },
-  { label: "Combined Valuation", value: 700, suffix: "+ Cr", prefix: "INR " },
+  { label: "Combined Valuation", value: 700, suffix: " Cr+", prefix: "INR " },
   { label: "Applications", value: 4500, suffix: "+", prefix: "" },
   { label: "Cities Reached", value: 190, suffix: "+", prefix: "" },
   { label: "Professionals in TSUV Network", value: 25000, suffix: "+", prefix: "" },
