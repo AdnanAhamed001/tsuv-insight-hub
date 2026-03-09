@@ -117,6 +117,12 @@ const Portfolio = () => {
     <PageLayout>
       <section className="hero-gradient section-padding py-16">
         <div className="mx-auto max-w-7xl">
+          <nav className="mb-6 text-sm text-primary-foreground/60">
+            <Link to="/" className="hover:text-secondary">Home</Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-primary-foreground">Portfolio</span>
+          </nav>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">Portfolio</p>
           <h1 className="mb-2 font-display text-4xl font-bold text-primary-foreground">PORTFOLIO COMPANIES</h1>
           <p className="max-w-3xl text-primary-foreground/80">
             Backing Bharat's most resilient founders. Explore the 65+ category-defining startups that have accelerated their growth through The StepUp Ventures.
