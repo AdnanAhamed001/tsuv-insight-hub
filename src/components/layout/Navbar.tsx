@@ -22,7 +22,6 @@ const navLinks = [
     ],
   },
   { name: "About Us", path: "/about" },
-  { name: "People", path: "/people" },
   { name: "Blog", path: "/blog" },
   { name: "Contact Us", path: "/contact" },
 ];
