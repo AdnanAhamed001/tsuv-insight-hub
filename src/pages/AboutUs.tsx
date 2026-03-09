@@ -1,7 +1,18 @@
+import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { Link } from "react-router-dom";
-import { Target, Rocket, Wallet, Users, GraduationCap, TrendingUp, Globe, CheckCircle, ArrowRight, ChevronDown } from "lucide-react";
+import {
+  Target, Users, GraduationCap, TrendingUp, Globe,
+  CheckCircle, Linkedin
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
+/* ── Stats ── */
 const stats = [
   { icon: GraduationCap, value: "50+", label: "Mentors" },
   { icon: Users, value: "10+", label: "Coaches" },
@@ -9,6 +20,7 @@ const stats = [
   { icon: Globe, value: "25,000+", label: "Professionals in the Network" },
 ];
 
+/* ── What We Do ── */
 const whatWeDo = [
   "Business model refinement",
   "Go-to-market strategy",
@@ -18,18 +30,56 @@ const whatWeDo = [
   "Fundraising support",
 ];
 
+/* ── Why Us ── */
 const whyUs = [
   { title: "WELL ROUNDED TEAM OF COACHES", desc: "Our mentors bring deep industry expertise, startup experience and hands-on guidance to accelerate growth." },
   { title: "EXPERIENCED EXECUTIVE TEAM", desc: "Leadership with proven track record in scaling startups and building sustainable businesses." },
   { title: "HIGHLY ACCOMPLISHED MENTORS", desc: "Access to seasoned founders, CXOs and investors who provide strategic direction and global perspective." },
 ];
 
+/* ── Testimonials ── */
 const testimonials = [
   { name: "Nakul", role: "Founder & CEO", quote: "StepUp Ventures played a crucial role in refining our strategy and connecting us with the right investors." },
   { name: "Swati", role: "Founder", quote: "The mentorship and ecosystem support accelerated our growth significantly." },
   { name: "Iram", role: "Founder", quote: "The structured incubation journey helped us scale faster than expected." },
 ];
 
+/* ── Team & Mentors ── */
+interface Person {
+  name: string;
+  role: string;
+  linkedin?: string;
+  image?: string;
+}
+
+const teamMembers: Person[] = [
+  { name: "Dr. Ebaad Momin", role: "Managing Partner", linkedin: "https://www.linkedin.com/in/ebaad-momin-a8435324/", image: "dr-ebaad-momin.jpg" },
+  { name: "Mohammed Mohin Shaikh", role: "Partner", linkedin: "https://www.linkedin.com/in/mahammed-mohin-98306311/", image: "mohammed-mohin-shaikh.jpg" },
+  { name: "Salman Mohammed", role: "Partner", linkedin: "https://www.linkedin.com/in/salman-mohammed-b05a497/", image: "salman-mohammed.jpg" },
+  { name: "Mohamed Yunus, CA", role: "Financial Advisor", linkedin: "https://www.linkedin.com/in/mohamed-yunus-55571195", image: "mohamed-yunus.jpg" },
+  { name: "Tariq Syed", role: "Coach", linkedin: "https://www.linkedin.com/in/tariqahmedsyed/", image: "tariq-syed.jpg" },
+  { name: "Sameer Ahmed", role: "Coach", image: "sameer-ahmed.jpg" },
+  { name: "Tabish Sangrar", role: "Mentor", linkedin: "https://www.linkedin.com/in/tabish-sangrar/", image: "tabish-sangrar.jpg" },
+  { name: "Raja Singh", role: "Mentor", linkedin: "https://www.linkedin.com/in/rsbhurji/", image: "raja-singh.jpg" },
+];
+
+const mentors: Person[] = [
+  { name: "Anand Vijay Jha", role: "Mentor", linkedin: "https://www.linkedin.com/in/anandvijayjha/", image: "anand-vijay-jha.jpg" },
+  { name: "Anshu Aanand", role: "Mentor", linkedin: "https://www.linkedin.com/in/anshuaanandofficial/", image: "anshu-aanand.jpg" },
+  { name: "Arijit Bhattacharyya", role: "Mentor", linkedin: "https://www.linkedin.com/in/arijitbhattacharyya/", image: "arijit-bhattacharyya.jpg" },
+  { name: "Dr. Harvinder Popli", role: "Mentor", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.jpg" },
+  { name: "Ebhin Ephram", role: "Mentor", image: "ebhin-ephram.jpg" },
+  { name: "Florian Oberhofer", role: "Mentor", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.jpg" },
+  { name: "Rahul Anand", role: "Mentor", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.jpg" },
+  { name: "Qais Mujeeb", role: "Mentor", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.jpg" },
+  { name: "Shivam Ahuja", role: "Mentor", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.jpg" },
+  { name: "Vidhya Ramasubban", role: "Mentor", image: "vidhya-ramasubban.jpg" },
+  { name: "Hemant Mishra", role: "Mentor", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.jpg" },
+  { name: "Malini Parmar", role: "Mentor", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.jpg" },
+  { name: "Neetii Makkar", role: "Mentor", image: "neetii-makkar.jpg" },
+];
+
+/* ── FAQs ── */
 const faqs = [
   { q: "Who can apply to StepUp Ventures?", a: "Early-stage founders from across India, especially from Tier 2 & Tier 3 cities, who are building scalable and impact-driven startups." },
   { q: "What stage should my startup be in?", a: "We typically work with idea to early revenue stage startups that demonstrate strong founder-market fit and growth potential." },
@@ -39,25 +89,96 @@ const faqs = [
   { q: "Do you support startups outside metro cities?", a: "Absolutely. Our focus is on Bharat founders across Tier 2, Tier 3 and emerging startup ecosystems." },
 ];
 
+/* ── Person Card ── */
+const PersonCard = ({ person, imageDir }: { person: Person; imageDir: string }) => {
+  const initials = person.name.split(" ").map((n) => n[0]).slice(0, 2).join("");
+  const imageSrc = person.image ? `/images/${imageDir}/${person.image}` : null;
+
+  return (
+    <div className="tool-card group relative flex flex-col items-center text-center">
+      <div className="mb-4 h-28 w-28 overflow-hidden rounded-full border-2 border-border bg-muted shadow-md transition-all duration-300 group-hover:border-secondary group-hover:shadow-lg group-hover:shadow-secondary/20">
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={person.name}
+            className="h-full w-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = "none";
+              (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden");
+            }}
+          />
+        ) : null}
+        <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-primary to-primary/80 ${imageSrc ? "hidden" : ""}`}>
+          <span className="font-display text-2xl font-bold text-primary-foreground">{initials}</span>
+        </div>
+      </div>
+      <h3 className="font-display text-base font-semibold">{person.name}</h3>
+      <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-secondary">{person.role}</span>
+      {person.linkedin && (
+        <a
+          href={person.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute right-4 top-4 rounded-full bg-primary/10 p-2 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary/20"
+        >
+          <Linkedin className="h-4 w-4 text-primary" />
+        </a>
+      )}
+    </div>
+  );
+};
+
 const AboutUs = () => {
+  const [activeTab, setActiveTab] = useState<"team" | "mentors">("team");
+
   return (
     <PageLayout>
       {/* Hero */}
       <section className="hero-gradient section-padding py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-2 flex items-center gap-2 text-xs text-primary-foreground/60">
-            <Link to="/" className="hover:text-primary-foreground">Home</Link>
-            <span>/</span>
+          <nav className="mb-6 text-sm text-primary-foreground/60">
+            <Link to="/" className="hover:text-secondary">Home</Link>
+            <span className="mx-2">&gt;</span>
             <span className="text-primary-foreground">About Us</span>
-          </div>
+          </nav>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">About Us</p>
           <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">ABOUT US</h1>
           <h2 className="mb-6 font-display text-2xl text-secondary md:text-3xl">Accelerating Bharat's Founders</h2>
           <p className="mb-4 max-w-3xl text-lg text-primary-foreground/90">
-            The mission of StepUp Ventures is to identify, nurture and scale high-potential startups across India. We focus on real Bharat entrepreneurs — from tier 2, tier 3 cities and underrepresented communities.
+            The StepUp Ventures is building Bharat's future by enabling ambitious founders to scale with speed and clarity. We go beyond incubation — working hand-in-hand with startups to refine their narrative, strategy, and execution while opening doors for market access and capital.
           </p>
           <p className="max-w-3xl text-primary-foreground/70">
-            Through our structured incubation journey, founders receive strategic mentorship, access to capital, investor connections, market expansion support, and product and business validation. We don't just fund startups — we build long-term, scalable ventures.
+            The StepUp Ventures plans to connect Bharat with the rest of the world. It endeavours to ignite the entrepreneurial spirit in the youth of Bharat, thus contributing in the creation of the 5 Trillion Dollar economy.
           </p>
+        </div>
+      </section>
+
+      {/* Accelerating Bharat's Founders */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div className="flex items-center justify-center">
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
+                <img src="/placeholder.svg" alt="Accelerating Bharat's Founders" className="h-full w-full object-cover" />
+              </div>
+            </div>
+            <div>
+              <h2 className="mb-4 font-display text-3xl font-bold">ACCELERATING BHARAT'S <span className="text-secondary">FOUNDERS</span></h2>
+              <p className="mb-6 text-sm text-muted-foreground">
+                The mission of StepUp Ventures is to identify, nurture and scale high-potential startups across India. We focus on real Bharat entrepreneurs — from tier 2, tier 3 cities and underrepresented communities.
+              </p>
+              <p className="mb-4 text-sm text-muted-foreground">Through our structured incubation journey, founders receive:</p>
+              <div className="mb-4 space-y-2">
+                {["Strategic mentorship", "Access to capital", "Investor connections", "Market expansion support", "Product and business validation"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-secondary" />
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm font-semibold text-primary">We don't just fund startups — we build long-term, scalable ventures.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -96,8 +217,8 @@ const AboutUs = () => {
               <p className="mt-6 text-sm font-semibold text-primary">We ensure startups are not just investment-ready, but scale-ready.</p>
             </div>
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80">
-                <span className="font-display text-3xl font-bold text-primary-foreground/20">Scale Ready</span>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
+                <img src="/placeholder.svg" alt="What We Do" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
@@ -119,8 +240,37 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Meet The Team / Mentors */}
       <section className="section-padding">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">Meet The <span className="text-secondary">People</span></h2>
+          <div className="relative">
+            <div className="pointer-events-none absolute -left-4 top-0 hidden select-none lg:block">
+              <span className="font-display text-8xl font-bold uppercase tracking-widest text-muted-foreground/5 [writing-mode:vertical-lr]">
+                {activeTab === "team" ? "FOUNDER" : "MENTOR"}
+              </span>
+            </div>
+
+            <div className="mb-8 flex justify-center gap-2">
+              <button onClick={() => setActiveTab("team")} className={`rounded-md px-6 py-2.5 text-sm font-semibold transition-colors ${activeTab === "team" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
+                Team
+              </button>
+              <button onClick={() => setActiveTab("mentors")} className={`rounded-md px-6 py-2.5 text-sm font-semibold transition-colors ${activeTab === "mentors" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
+                Mentors
+              </button>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {(activeTab === "team" ? teamMembers : mentors).map((p) => (
+                <PersonCard key={p.name} person={p} imageDir={activeTab === "team" ? "team" : "mentors"} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-padding bg-tsuv-surface">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">What Our Startups Say</h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -139,7 +289,7 @@ const AboutUs = () => {
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="mb-4 font-display text-2xl font-bold">Subscribe to get latest information on TSV</h2>
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2 sm:flex-row">
             <input type="text" placeholder="Full Name" className="flex-1 rounded-md border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:outline-none" />
             <input type="email" placeholder="Email Address" className="flex-1 rounded-md border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:outline-none" />
             <button className="rounded-md bg-secondary px-6 py-2.5 font-semibold text-secondary-foreground hover:bg-secondary/90">Submit</button>
@@ -151,17 +301,18 @@ const AboutUs = () => {
       <section className="section-padding">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((f, i) => (
-              <details key={i} className="group rounded-lg border border-border bg-card">
-                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-display text-sm font-semibold">
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-lg border border-border bg-card px-2">
+                <AccordionTrigger className="font-display text-sm font-semibold">
                   {f.q}
-                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
-                </summary>
-                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
-              </details>
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
     </PageLayout>
