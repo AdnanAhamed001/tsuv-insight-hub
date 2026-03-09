@@ -2,8 +2,14 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Link } from "react-router-dom";
 import {
   Calculator, BarChart3, ClipboardCheck, FileText,
-  Play, Headphones, ArrowRight, TrendingUp, ChevronDown
+  Play, Headphones, ArrowRight, TrendingUp, ExternalLink, Newspaper
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 /* ── Section 1: Big Hub Cards ── */
 const hubCards = [
@@ -15,8 +21,7 @@ const hubCards = [
   { title: "Podcasts", subtitle: "Interviews & Ecosystem Audio", desc: "Conversations with the executive team, coaches, and successful founders.", icon: Headphones, gradient: "from-[hsl(37,80%,30%)] to-[hsl(37,96%,50%)]", path: "/resources/podcasts" },
 ];
 
-
-/* ── Section 3: Featured Tools & Assessments ── */
+/* ── Featured Tools & Assessments ── */
 const featuredCards = [
   { name: "VC Scout Readiness Assessment", cta: "Take the Assessment →", path: "/resources/fundraising-readiness", icon: ClipboardCheck },
   { name: "Founder-Market Fit Scorecard", cta: "Take the Assessment →", path: "/resources/startup-health-check", icon: BarChart3 },
@@ -24,7 +29,28 @@ const featuredCards = [
   { name: "Berkus Method Valuation Calculator", cta: "Calculate →", path: "/resources/berkus-method", icon: Calculator },
 ];
 
-/* ── Section 4: FAQs ── */
+/* ── Featured PR Activity ── */
+const prCards = [
+  { headline: "StepUp Ventures Featured for Backing Tier II/III Founders", excerpt: "National media highlights StepUp's commitment to backing entrepreneurs from emerging startup hubs across Bharat.", source: "Economic Times" },
+  { headline: "Startup Funding Announcements", excerpt: "Portfolio companies secure follow-on investments from leading VCs and angel networks.", source: "YourStory" },
+  { headline: "Award Recognitions & Ecosystem Milestones", excerpt: "StepUp Ventures recognized for its contribution to building the Bharat startup ecosystem.", source: "Inc42" },
+];
+
+/* ── Featured Videos ── */
+const videoCards = [
+  { title: "Demo Day Highlights — Cohort Showcase", desc: "Watch founders pitch their startups to investors and ecosystem partners." },
+  { title: "Founder Masterclass Series", desc: "Expert sessions on fundraising, product-market fit, and scaling strategies." },
+  { title: "Investor AMA Sessions", desc: "Candid conversations with VCs and angel investors on what they look for." },
+];
+
+/* ── Featured Podcasts ── */
+const podcastCards = [
+  { title: "Founder Journey Episodes", desc: "Stories from founders who built their startups from Tier II/III cities." },
+  { title: "Investor Perspectives", desc: "Insights from VCs and angels on the Bharat startup opportunity." },
+  { title: "Ecosystem Conversations", desc: "Discussions with mentors, accelerators, and ecosystem builders." },
+];
+
+/* ── FAQs ── */
 const faqs = [
   { q: "How do I use the valuation calculators?", a: "Enter your startup's financial data into the input fields. The calculator will instantly compute results and display visual outputs. No account needed." },
   { q: "Are these tools free to use?", a: "Yes, all tools and assessments on StepUp are completely free for founders." },
@@ -39,6 +65,12 @@ const Resources = () => {
       {/* Hero */}
       <section className="hero-gradient section-padding py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
+          <nav className="mb-6 text-sm text-primary-foreground/60">
+            <Link to="/" className="hover:text-secondary">Home</Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-primary-foreground">Resources</span>
+          </nav>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">Resources</p>
           <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
             RESOURCES & <span className="text-secondary">LIBRARY</span>
           </h1>
@@ -48,9 +80,12 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 1: The Resource Hubs — Big Clickable Cards ═══ */}
+      {/* ═══ Resource Categories ═══ */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Resource <span className="text-secondary">Categories</span>
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {hubCards.map((card) => (
               <Link
@@ -72,9 +107,8 @@ const Resources = () => {
         </div>
       </section>
 
-
-      {/* ═══ SECTION 2: Featured Report Banner ═══ */}
-      <section className="section-padding">
+      {/* ═══ Deep-Dive Insights ═══ */}
+      <section className="section-padding bg-tsuv-surface">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">
             Deep-Dive <span className="text-secondary">Insights</span>
@@ -116,8 +150,8 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3: Featured Tools & Assessments ═══ */}
-      <section className="section-padding bg-tsuv-surface">
+      {/* ═══ Featured Tools & Assessments ═══ */}
+      <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">
             Featured Tools & <span className="text-secondary">Assessments</span>
@@ -140,21 +174,98 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4: FAQs ═══ */}
+      {/* ═══ Featured PR Activity ═══ */}
+      <section className="section-padding bg-tsuv-surface">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Featured <span className="text-secondary">PR Activity</span>
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {prCards.map((pr) => (
+              <div key={pr.headline} className="tool-card group">
+                <div className="mb-3 flex items-center gap-2">
+                  <Newspaper className="h-5 w-5 text-secondary" />
+                  <span className="text-xs font-semibold text-muted-foreground">{pr.source}</span>
+                </div>
+                <h3 className="mb-2 font-display text-sm font-semibold group-hover:text-secondary">{pr.headline}</h3>
+                <p className="text-xs text-muted-foreground">{pr.excerpt}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/resources/pr-activity" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary">
+              Read Full Coverage <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ Featured Videos ═══ */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Featured <span className="text-secondary">Videos</span>
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {videoCards.map((video) => (
+              <div key={video.title} className="tool-card group cursor-pointer">
+                <div className="mb-4 flex aspect-video items-center justify-center rounded-lg bg-muted">
+                  <Play className="h-12 w-12 text-secondary/60 group-hover:text-secondary" />
+                </div>
+                <h3 className="mb-2 font-display text-sm font-semibold group-hover:text-secondary">{video.title}</h3>
+                <p className="text-xs text-muted-foreground">{video.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/resources/videos" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary">
+              Watch All Videos <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ Featured Podcasts ═══ */}
+      <section className="section-padding bg-tsuv-surface">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 text-center font-display text-3xl font-bold">
+            Featured <span className="text-secondary">Podcasts</span>
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {podcastCards.map((podcast) => (
+              <div key={podcast.title} className="tool-card group cursor-pointer">
+                <div className="mb-4 flex h-16 items-center justify-center rounded-lg bg-muted">
+                  <Headphones className="h-8 w-8 text-secondary/60 group-hover:text-secondary" />
+                </div>
+                <h3 className="mb-2 font-display text-sm font-semibold group-hover:text-secondary">{podcast.title}</h3>
+                <p className="text-xs text-muted-foreground">{podcast.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/resources/podcasts" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary">
+              Listen to All Episodes <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ FAQs ═══ */}
       <section className="section-padding">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-8 text-center font-display text-3xl font-bold">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((f, i) => (
-              <details key={i} className="group rounded-lg border border-border bg-card">
-                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-display text-sm font-semibold">
+              <AccordionItem key={i} value={`faq-${i}`} className="rounded-lg border border-border bg-card px-2">
+                <AccordionTrigger className="font-display text-sm font-semibold">
                   {f.q}
-                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
-                </summary>
-                <p className="px-6 pb-4 text-sm text-muted-foreground">{f.a}</p>
-              </details>
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
     </PageLayout>
