@@ -6,7 +6,7 @@ const milestones = [
   { label: "Combined Valuation", value: 700, suffix: "+ Cr", prefix: "INR " },
   { label: "Applications", value: 4500, suffix: "+", prefix: "" },
   { label: "Cities Reached", value: 190, suffix: "+", prefix: "" },
-  { label: "Professionals in TSV Network", value: 2500, suffix: "+", prefix: "" },
+  { label: "Professionals in TSUV Network", value: 25000, suffix: "+", prefix: "" },
 ];
 
 const useCountUp = (target: number, duration: number, start: boolean) => {
