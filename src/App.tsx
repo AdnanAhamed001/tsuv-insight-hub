@@ -12,7 +12,6 @@ import InvestorHub from "./pages/InvestorHub";
 import Portfolio from "./pages/Portfolio";
 import Resources from "./pages/Resources";
 import AboutUs from "./pages/AboutUs";
-import People from "./pages/People";
 import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
