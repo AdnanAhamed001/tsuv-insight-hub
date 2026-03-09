@@ -11,7 +11,7 @@ import Apply from "./pages/Apply";
 import InvestorHub from "./pages/InvestorHub";
 import Portfolio from "./pages/Portfolio";
 import Resources from "./pages/Resources";
-
+import AboutUs from "./pages/AboutUs";
 import People from "./pages/People";
 import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
@@ -59,6 +59,8 @@ const App = () => (
           <Route path="/investor-hub" element={<InvestorHub />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/people" element={<People />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
