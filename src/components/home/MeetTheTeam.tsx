@@ -27,10 +27,10 @@ const mentors = [
   { name: "Rahul Anand", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.webp" },
   { name: "Qais Mujeeb", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.webp" },
   { name: "Shivam Ahuja", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.webp" },
-  { name: "Vidhya Ramasubban", linkedin: "", image: "vidhya-ramasubban.jpg" },
-  { name: "Hemant Mishra", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.jpg" },
-  { name: "Malini Parmar", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.jpg" },
-  { name: "Neetii Makkar", linkedin: "", image: "neetii-makkar.jpg" },
+  { name: "Vidhya Ramasubban", linkedin: "", image: "vidhya-ramasubban.webp" },
+  { name: "Hemant Mishra", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.webp" },
+  { name: "Malini Parmar", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.webp" },
+  { name: "Neetii Makkar", linkedin: "", image: "neetii-makkar.webp" },
 ];
 
 const PersonCard = ({ person, imageDir }: { person: { name: string; linkedin: string; image: string }; imageDir: string }) => {
