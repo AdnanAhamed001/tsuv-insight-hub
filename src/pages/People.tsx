@@ -31,15 +31,15 @@ const teamMembers: Person[] = [
 ];
 
 const mentors: Person[] = [
-  { name: "Anand Vijay Jha", role: "Mentor", linkedin: "https://www.linkedin.com/in/anandvijayjha/", image: "anand-vijay-jha.jpg" },
-  { name: "Anshu Aanand", role: "Mentor", linkedin: "https://www.linkedin.com/in/anshuaanandofficial/", image: "anshu-aanand.jpg" },
-  { name: "Arijit Bhattacharyya", role: "Mentor", linkedin: "https://www.linkedin.com/in/arijitbhattacharyya/", image: "arijit-bhattacharyya.jpg" },
-  { name: "Dr. Harvinder Popli", role: "Mentor", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.jpg" },
-  { name: "Ebhin Ephram", role: "Mentor", image: "ebhin-ephram.jpg" },
-  { name: "Florian Oberhofer", role: "Mentor", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.jpg" },
+  { name: "Anand Vijay Jha", role: "Mentor", linkedin: "https://www.linkedin.com/in/anandvijayjha/", image: "anand-vijay-jha.webp" },
+  { name: "Anshu Aanand", role: "Mentor", linkedin: "https://www.linkedin.com/in/anshuaanandofficial/", image: "anshu-aanand.webp" },
+  { name: "Arijit Bhattacharyya", role: "Mentor", linkedin: "https://www.linkedin.com/in/arijitbhattacharyya/", image: "arijit-bhattacharyya.webp" },
+  { name: "Dr. Harvinder Popli", role: "Mentor", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.webp" },
+  { name: "Ebhin Ephram", role: "Mentor", image: "ebhin-ephram.webp" },
+  { name: "Florian Oberhofer", role: "Mentor", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.webp" },
   { name: "Rahul Anand", role: "Mentor", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.jpg" },
   { name: "Qais Mujeeb", role: "Mentor", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.jpg" },
-  { name: "Shivam Ahuja", role: "Mentor", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.jpg" },
+  { name: "Shivam Ahuja", role: "Mentor", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.webp" },
   { name: "Vidhya Ramasubban", role: "Mentor", image: "vidhya-ramasubban.jpg" },
   { name: "Hemant Mishra", role: "Mentor", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.jpg" },
   { name: "Malini Parmar", role: "Mentor", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.jpg" },

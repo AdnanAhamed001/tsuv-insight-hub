@@ -18,15 +18,15 @@ const team = [
 ];
 
 const mentors = [
-  { name: "Anand Vijay Jha", linkedin: "https://www.linkedin.com/in/anandvijayjha/", image: "anand-vijay-jha.jpg" },
-  { name: "Anshu Aanand", linkedin: "https://www.linkedin.com/in/anshuaanandofficial/", image: "anshu-aanand.jpg" },
-  { name: "Arijit Bhattacharyya", linkedin: "https://www.linkedin.com/in/arijitbhattacharyya/", image: "arijit-bhattacharyya.jpg" },
-  { name: "Dr. Harvinder Popli", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.jpg" },
-  { name: "Ebhin Ephram", linkedin: "", image: "ebhin-ephram.jpg" },
-  { name: "Florian Oberhofer", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.jpg" },
+  { name: "Anand Vijay Jha", linkedin: "https://www.linkedin.com/in/anandvijayjha/", image: "anand-vijay-jha.webp" },
+  { name: "Anshu Aanand", linkedin: "https://www.linkedin.com/in/anshuaanandofficial/", image: "anshu-aanand.webp" },
+  { name: "Arijit Bhattacharyya", linkedin: "https://www.linkedin.com/in/arijitbhattacharyya/", image: "arijit-bhattacharyya.webp" },
+  { name: "Dr. Harvinder Popli", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.webp" },
+  { name: "Ebhin Ephram", linkedin: "", image: "ebhin-ephram.webp" },
+  { name: "Florian Oberhofer", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.webp" },
   { name: "Rahul Anand", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.jpg" },
   { name: "Qais Mujeeb", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.jpg" },
-  { name: "Shivam Ahuja", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.jpg" },
+  { name: "Shivam Ahuja", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.webp" },
   { name: "Vidhya Ramasubban", linkedin: "", image: "vidhya-ramasubban.jpg" },
   { name: "Hemant Mishra", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.jpg" },
   { name: "Malini Parmar", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.jpg" },
