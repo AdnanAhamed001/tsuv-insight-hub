@@ -11,7 +11,7 @@ const team = [
   { name: "Mohammed Mohin Shaikh", linkedin: "https://www.linkedin.com/in/mahammed-mohin-98306311/", image: "mohammed-mohin-shaikh.webp" },
   { name: "Salman Mohammed", linkedin: "https://www.linkedin.com/in/salman-mohammed-b05a497/", image: "salman-mohammed.webp" },
   { name: "Mohamed Yunus, CA", linkedin: "https://www.linkedin.com/in/mohamed-yunus-55571195", image: "mohamed-yunus.webp" },
-  { name: "Tariq Syed", linkedin: "https://www.linkedin.com/in/tariqahmedsyed/", image: "tariq-syed.jpg" },
+  { name: "Tariq Syed", linkedin: "https://www.linkedin.com/in/tariqahmedsyed/", image: "tariq-syed.webp" },
   { name: "Sameer Ahmed", linkedin: "", image: "sameer-ahmed.webp" },
   { name: "Tabish Sangrar", linkedin: "https://www.linkedin.com/in/tabish-sangrar/", image: "tabish-sangrar.webp" },
   { name: "Raja Singh", linkedin: "https://www.linkedin.com/in/rsbhurji/", image: "raja-singh.webp" },
