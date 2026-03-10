@@ -69,7 +69,7 @@ const teamMembers: Person[] = [
   { name: "Mohammed Mohin Shaikh", role: "Partner", linkedin: "https://www.linkedin.com/in/mahammed-mohin-98306311/", image: "mohammed-mohin-shaikh.jpg" },
   { name: "Salman Mohammed", role: "Partner", linkedin: "https://www.linkedin.com/in/salman-mohammed-b05a497/", image: "salman-mohammed.jpg" },
   { name: "Mohamed Yunus, CA", role: "Financial Advisor", linkedin: "https://www.linkedin.com/in/mohamed-yunus-55571195", image: "mohamed-yunus.jpg" },
-  { name: "Tariq Syed", role: "Coach", linkedin: "https://www.linkedin.com/in/tariqahmedsyed/", image: "tariq-syed.jpg" },
+  { name: "Tariq Syed", role: "Coach", linkedin: "https://www.linkedin.com/in/tariqahmedsyed/", image: "tariq-syed.webp" },
   { name: "Sameer Ahmed", role: "Coach", image: "sameer-ahmed.jpg" },
   { name: "Tabish Sangrar", role: "Mentor", linkedin: "https://www.linkedin.com/in/tabish-sangrar/", image: "tabish-sangrar.jpg" },
   { name: "Raja Singh", role: "Mentor", linkedin: "https://www.linkedin.com/in/rsbhurji/", image: "raja-singh.jpg" },
