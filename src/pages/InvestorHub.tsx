@@ -98,7 +98,7 @@ const InvestorHub = () => {
           <div className="grid gap-12 md:grid-cols-2 items-center">
             <div className="aspect-[4/3] rounded-xl bg-muted overflow-hidden">
               <img 
-                src="/placeholder.svg" 
+                src="/images/investor-hub.jpg" 
                 alt="Investment Philosophy" 
                 className="h-full w-full object-cover"
               />

@@ -4,7 +4,7 @@ const ProgramIntro = () => (
       {/* Left: Image placeholder */}
       <div className="rounded-xl bg-muted aspect-[4/3] flex items-center justify-center overflow-hidden">
         <img
-          src="/placeholder.svg"
+          src="/images/custom/program-speaker2.jpeg"
           alt="TSUV Incubation Program"
           className="h-full w-full object-cover"
         />

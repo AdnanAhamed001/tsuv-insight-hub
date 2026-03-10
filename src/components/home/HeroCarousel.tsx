@@ -118,7 +118,7 @@ const HeroCarousel = () => {
           </div>
 
           {/* Right: India Startup Map */}
-          <div className="hidden lg:block h-[380px]">
+          <div className="hidden lg:flex items-center justify-center min-h-[600px] w-full relative">
             <IndiaStartupMap />
           </div>
         </div>

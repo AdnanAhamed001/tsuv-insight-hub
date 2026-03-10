@@ -155,7 +155,7 @@ const AboutUs = () => {
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="flex items-center justify-center">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
-                <img src="/placeholder.svg" alt="Accelerating Bharat's Founders" className="h-full w-full object-cover" />
+                <img src="/images/hero-about-us.webp" alt="Accelerating Bharat's Founders" className="h-full w-full object-cover" />
               </div>
             </div>
             <div>
@@ -214,7 +214,7 @@ const AboutUs = () => {
             </div>
             <div className="flex items-center justify-center">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
-                <img src="/placeholder.svg" alt="What We Do" className="h-full w-full object-cover" />
+                <img src="/images/About-us-image-1.jpeg" alt="What We Do" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>

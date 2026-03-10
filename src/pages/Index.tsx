@@ -5,30 +5,17 @@ import MeetTheTeam from "@/components/home/MeetTheTeam";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const ecosystemPartners = [
-  "Artha Venture Fund", "Ennovent", "Anchor Capital", "Pentathlon Ventures", "Callapina Capital",
-  "LetsVenture", "India Accelerator", "Tremis Capital", "JAFCO Asia", "Digital Futurists Angel Network",
-  "Rehbar", "100X.VC", "Venture Catalysts", "Mount Judi Ventures", "Chandigarh Angels",
-  "Tomorrow Capital", "Pod", "Indian Angel Network", "Aditya Birla Ventures", "Lead Angels",
-  "RealTime Angels", "Fluid Ventures", "CI Ventures", "Piper Serica", "StartupXseed",
-  "Cogniphy", "SucSEED Indovation", "Bharat Founders Fund", "Recur Club", "Advantage Club",
-  "Klub", "Motilal Oswal", "Royal Ventures", "Peak XV Partners", "Sorin Investments",
-  "Dexter Angels", "Anthill Ventures", "Anova", "3one4 Capital", "3i Partners",
-  "The Investment Trust of India", "Mistry Ventures", "Sprout Venture Partners", "FirstCheque",
-  "GINSEV", "OCE Capital", "Goa Angel Network", "ReBright Partners", "She Capital",
-  "Anicut Capital", "Rukam Capital",
-];
+const ecosystemPartnersCount = 54;
+const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem Partners/new-logo-${i + 1}.png`);
 
-const servicePartners = [
-  "AWS", "DigitalOcean", "Freshworks", "IBM Cloud", "Monday.com",
-  "Notion", "Twilio", "Google Cloud", "Builder.ai", "Paytm", "F6S", "Miro",
-];
+const servicePartnersFiles = [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 42, 43, 45];
+const servicePartners = servicePartnersFiles.map((num) => `/images/Service Partners/logo-${num}.webp`);
 
 const featuredPortfolio = [
-  { name: "Fitkin", desc: "Women-led activewear brand offering stylish, high-performance, size-inclusive apparel." },
-  { name: "Crink", desc: "AI-powered mental wellness app for stress management & parenting guidance." },
-  { name: "Nugenomics", desc: "DNA analysis platform combining genetics + lifestyle data for health optimization." },
-  { name: "FreshLeaf", desc: "Premium affordable vitamin-infused teas sold online & in 40+ cities." },
+  { name: "Fitkin", desc: "Women-led activewear brand offering stylish, high-performance, size-inclusive apparel.", logo: "/images/startups/fitkin-logo.png" },
+  { name: "Crink", desc: "AI-powered mental wellness app for stress management & parenting guidance.", logo: "/images/startups/crink-logo.png" },
+  { name: "Nugenomics", desc: "DNA analysis platform combining genetics + lifestyle data for health optimization.", logo: "/images/startups/nugenomics-logo.png" },
+  { name: "FreshLeaf", desc: "Premium affordable vitamin-infused teas sold online & in 40+ cities.", logo: "/images/startups/freshleaf-logo.png" },
 ];
 
 const newsFeed = [
@@ -51,11 +38,11 @@ const Index = () => {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredPortfolio.map((s) => (
-              <Link key={s.name} to="/portfolio" className="tool-card group">
-                <div className="mb-3 flex h-14 items-center justify-center rounded-md bg-muted">
-                  <span className="font-display text-lg font-bold text-primary">{s.name.charAt(0)}</span>
+              <Link key={s.name} to="/portfolio" className="tool-card group flex flex-col items-center text-center">
+                <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-xl bg-white border border-border/60 p-3 shadow-sm relative overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:border-secondary/50">
+                  <img src={s.logo} alt={`${s.name} logo`} className="w-full h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <h3 className="mb-1 font-display text-base font-semibold group-hover:text-secondary">{s.name}</h3>
+                <h3 className="mb-2 font-display text-lg font-bold group-hover:text-secondary">{s.name}</h3>
                 <p className="text-xs text-muted-foreground">{s.desc}</p>
               </Link>
             ))}
@@ -70,8 +57,12 @@ const Index = () => {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="relative flex items-center justify-center">
-              <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80">
-                <span className="font-display text-4xl font-bold text-primary-foreground/20">$5 Trillion Economy</span>
+              <div className="flex h-64 w-full items-center justify-center overflow-hidden rounded-2xl bg-muted">
+                <img 
+                  src="/images/custom/about-us-group.jpeg" 
+                  alt="The StepUp Ventures Team" 
+                  className="h-full w-full object-cover" 
+                />
               </div>
             </div>
             <div>
@@ -103,10 +94,14 @@ const Index = () => {
           <h2 className="mb-10 text-center font-display text-3xl font-bold">
             Ecosystem <span className="text-secondary">Partners</span>
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {ecosystemPartners.map((p) => (
-              <div key={p} className="rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-sm">
-                {p}
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {ecosystemPartners.map((p, i) => (
+              <div key={i} className="flex h-20 w-32 items-center justify-center rounded-xl bg-white border border-border/50 p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:border-secondary/30">
+                <img 
+                  src={p} 
+                  alt={`Ecosystem Partner ${i + 1}`} 
+                  className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0 hover:scale-105" 
+                />
               </div>
             ))}
           </div>
@@ -114,15 +109,19 @@ const Index = () => {
       </section>
 
       {/* Service Partners */}
-      <section className="section-padding bg-tsuv-surface">
+      <section className="section-padding bg-black text-white">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center font-display text-2xl font-bold">
             Service <span className="text-secondary">Partners</span>
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {servicePartners.map((p) => (
-              <div key={p} className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm">
-                {p}
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {servicePartners.map((p, i) => (
+              <div key={i} className="flex h-20 w-32 items-center justify-center rounded-xl bg-white/5 border border-white/10 p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:border-secondary/50 hover:bg-white/10">
+                <img 
+                  src={p} 
+                  alt={`Service Partner ${i + 1}`} 
+                  className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0 hover:scale-105" 
+                />
               </div>
             ))}
           </div>

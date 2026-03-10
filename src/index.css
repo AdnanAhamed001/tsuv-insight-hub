@@ -136,3 +136,30 @@
 .animate-fade-in {
   animation: fade-in 0.6s ease-out;
 }
+
+@keyframes card-cycle {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+  }
+  5%, 20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+  25% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.05);
+    pointer-events: none;
+  }
+}
+
+@keyframes card-float {
+  from {
+    transform: translate(-50%, calc(-50% - 4px));
+  }
+  to {
+    transform: translate(-50%, calc(-50% + 4px));
+  }
+}
