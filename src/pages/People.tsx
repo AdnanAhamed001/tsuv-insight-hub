@@ -37,13 +37,13 @@ const mentors: Person[] = [
   { name: "Dr. Harvinder Popli", role: "Mentor", linkedin: "https://www.linkedin.com/in/harvinder-popli-6ab9b115/", image: "dr-harvinder-popli.webp" },
   { name: "Ebhin Ephram", role: "Mentor", image: "ebhin-ephram.webp" },
   { name: "Florian Oberhofer", role: "Mentor", linkedin: "https://www.linkedin.com/in/flooberhofer/", image: "florian-oberhofer.webp" },
-  { name: "Rahul Anand", role: "Mentor", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.jpg" },
-  { name: "Qais Mujeeb", role: "Mentor", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.jpg" },
+  { name: "Rahul Anand", role: "Mentor", linkedin: "https://www.linkedin.com/in/rahul-anand-66835b1/", image: "rahul-anand.webp" },
+  { name: "Qais Mujeeb", role: "Mentor", linkedin: "https://www.linkedin.com/in/moqaism/", image: "qais-mujeeb.webp" },
   { name: "Shivam Ahuja", role: "Mentor", linkedin: "https://www.linkedin.com/in/ahujashivam/", image: "shivam-ahuja.webp" },
-  { name: "Vidhya Ramasubban", role: "Mentor", image: "vidhya-ramasubban.jpg" },
-  { name: "Hemant Mishra", role: "Mentor", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.jpg" },
-  { name: "Malini Parmar", role: "Mentor", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.jpg" },
-  { name: "Neetii Makkar", role: "Mentor", image: "neetii-makkar.jpg" },
+  { name: "Vidhya Ramasubban", role: "Mentor", image: "vidhya-ramasubban.webp" },
+  { name: "Hemant Mishra", role: "Mentor", linkedin: "https://www.linkedin.com/in/hemant-mishra-vc/", image: "hemant-mishra.webp" },
+  { name: "Malini Parmar", role: "Mentor", linkedin: "https://www.linkedin.com/in/maliniparmar/", image: "malini-parmar.webp" },
+  { name: "Neetii Makkar", role: "Mentor", image: "neetii-makkar.webp" },
 ];
 
 const PersonCard = ({ person, imageDir }: { person: Person; imageDir: string }) => {
