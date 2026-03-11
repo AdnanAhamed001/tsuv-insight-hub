@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const ecosystemPartnersCount = 54;
-const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem Partners/new-logo-${i + 1}.png`);
+const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem%20Partners/new-logo-${i + 1}.png`);
 
 const servicePartnersFiles = [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 42, 43, 45];
 const servicePartners = servicePartnersFiles.map((num) => `/images/Service Partners/logo-${num}.webp`);
