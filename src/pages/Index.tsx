@@ -47,10 +47,10 @@ const newsFeed = [
   {
     title: "Crink Secures Rs 1.8 Crore Pre-Seed Funding to Scale Its AI-Driven Human Wellbeing Platform",
     desc: "Crink's AI-powered mental wellness app closes its pre-seed funding round.",
-    source: "The Wire",
+    source: "Tribune India",
     sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform")}&embed=image.url`,
-    href: "https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/amp?utm=relatedarticles",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.tribuneindia.com/news/business/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/")}&embed=image.url`,
+    href: "https://www.tribuneindia.com/news/business/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/",
   },
   {
     title: "Delhi Startup Nugenomics Is Using AI/ML for Lifestyle Genetic Testing",
@@ -67,6 +67,14 @@ const newsFeed = [
     sourceColor: "#2980b9",
     image: `https://api.microlink.io/?url=${encodeURIComponent("https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms")}&embed=image.url`,
     href: "https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms",
+  },
+  {
+    title: "TSUV's Partnerships with the Government and Startup Bodies Under 'Building Bharat'",
+    desc: "The StepUp Ventures forges key alliances with government bodies and startup ecosystems to drive Bharat's entrepreneurial growth.",
+    source: "Entrepreneur India",
+    sourceColor: "#1a5276",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513")}&embed=image.url`,
+    href: "https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513",
   },
 ];
 
