@@ -44,12 +44,12 @@ const HeroCarousel = () => {
       <div className="mx-auto max-w-7xl section-padding py-8 md:py-12 relative z-10 w-full">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
           {/* Left: Text content */}
-          <div className="flex flex-col justify-center">
-            <div key={current} className="animate-fade-in group">
-              <p className="mb-3 text-sm font-bold tracking-widest uppercase text-secondary/90 transition-colors group-hover:text-secondary">
+          <div className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
+            <div key={current} className="animate-fade-in group w-full">
+              <p className="mb-3 text-xs md:text-sm font-bold tracking-widest uppercase text-secondary/90 transition-colors group-hover:text-secondary">
                 {slide.subtitle}
               </p>
-              <h1 className="mb-4 font-display text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-sm leading-[1.1]">
+              <h1 className="mb-4 font-display text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-sm leading-[1.2] md:leading-[1.1]">
                 {slide.headline}
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[#fff4a3]">
@@ -58,7 +58,7 @@ const HeroCarousel = () => {
               </h1>
             </div>
 
-            <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-white/75 bg-black/20 p-3 rounded-xl border border-white/10 w-max shadow-inner backdrop-blur-sm">
+            <div className="mb-5 flex flex-wrap justify-center lg:justify-start gap-x-5 gap-y-3 text-xs font-medium text-white/75 bg-black/20 p-3 rounded-xl border border-white/10 w-full lg:w-max shadow-inner backdrop-blur-sm">
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
                 <strong className="text-white text-sm">4500+</strong> Apps from{" "}
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
             </div>
 
             {/* Carousel dots */}
-            <div className="mb-7 flex gap-2">
+            <div className="mb-7 flex gap-2 justify-center lg:justify-start">
               {slides.map((_, i) => (
                 <button
                   key={i}
@@ -88,8 +88,8 @@ const HeroCarousel = () => {
             </div>
 
             {/* Gateway Blocks */}
-            <div className="grid gap-3 sm:grid-cols-2 lg:max-w-[500px]">
-              <div className="animate-hero-card-1 group rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:border-secondary/50 hover:shadow-[0_12px_40px_rgba(255,215,0,0.15)] cursor-pointer">
+            <div className="grid gap-4 sm:grid-cols-2 lg:max-w-[500px] w-full max-w-[400px] sm:max-w-none">
+              <div className="animate-hero-card-1 group rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:border-secondary/50 hover:shadow-[0_12px_40px_rgba(255,215,0,0.15)] cursor-pointer text-left">
                 <div className="flex items-start justify-between mb-2">
                   <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors group-hover:scale-110 duration-300">
                     <Rocket className="h-5 w-5 text-secondary transition-transform group-hover:rotate-12" />
@@ -109,7 +109,7 @@ const HeroCarousel = () => {
                   Explore Program
                 </Link>
               </div>
-              <div className="animate-hero-card-2 group rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:border-secondary/50 hover:shadow-[0_12px_40px_rgba(255,215,0,0.15)] cursor-pointer">
+              <div className="animate-hero-card-2 group rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:border-secondary/50 hover:shadow-[0_12px_40px_rgba(255,215,0,0.15)] cursor-pointer text-left">
                 <div className="flex items-start justify-between mb-2">
                   <div className="p-2 bg-white/10 rounded-lg group-hover:bg-secondary/20 transition-colors group-hover:scale-110 duration-300">
                     <BarChart3 className="h-5 w-5 text-white/90 group-hover:text-secondary transition-transform group-hover:-translate-y-1" />
