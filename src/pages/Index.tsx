@@ -7,10 +7,10 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useRef, useState } from "react";
 
 const ecosystemPartnersCount = 54;
-const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem%20Partners/new-logo-${i + 1}.png`);
+const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/ecosystem-partners/new-logo-${i + 1}.png`);
 
 const servicePartnersFiles = [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 42, 43, 45];
-const servicePartners = servicePartnersFiles.map((num) => `/images/Service%20Partners/logo-${num}.webp`);
+const servicePartners = servicePartnersFiles.map((num) => `/images/service-partners/logo-${num}.webp`);
 
 const featuredPortfolio = [
   { name: "Fitkin", desc: "Women-led activewear brand offering stylish, high-performance, size-inclusive apparel.", logo: "/images/startups/fitkin-logo.png" },
