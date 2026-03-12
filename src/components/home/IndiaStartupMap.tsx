@@ -34,13 +34,12 @@ const IndiaStartupMap = () => {
   useEffect(() => {
     if (!mapLoaded) return;
     
-    // Configurable timings
-    const visibleDuration = 1500; // Time card stays visible
-    const transitionDuration = 500; // Time for fade in/out
-    const delayBetweenCards = 500; // Pause before next card appears
+    // Longer visible time so cards are enjoyable to read
+    const visibleDuration = 2200;
+    const transitionDuration = 650;
+    const delayBetweenCards = 300;
     
-    // Total time per card cycle: fade in + visible + fade out + delay
-    const singleCardCycleTime = transitionDuration + visibleDuration + transitionDuration + delayBetweenCards;
+    const singleCardCycleTime = transitionDuration + visibleDuration + 180 + delayBetweenCards;
     
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % startups.length);
@@ -49,35 +48,44 @@ const IndiaStartupMap = () => {
     return () => clearInterval(interval);
   }, [mapLoaded]);
 
-  // We need to keep a "fading out" state so the card doesn't instantly vanish from the DOM 
-  // before its opacity transition finishes. We achieve this by letting StartupCard 
-  // manage its own presence based on the activeIndex.
-
   return (
-    <div className="relative w-full py-16 flex items-center justify-center overflow-hidden">
-      <div className="relative w-full max-w-[800px]">
-        {/* Ambient glow */}
-        <div className="absolute inset-0 rounded-full bg-[#FFD700]/15 blur-3xl transition-opacity duration-1000" style={{ opacity: mapLoaded ? 1 : 0 }} />
+    <div className="relative w-full py-10 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full max-w-[620px]">
+        {/* Outer ambient glow ring */}
+        <div
+          className="absolute inset-[-6%] rounded-full transition-opacity duration-1000"
+          style={{
+            opacity: mapLoaded ? 1 : 0,
+            background: "radial-gradient(ellipse at center, rgba(255,215,0,0.08) 0%, transparent 65%)",
+          }}
+        />
+
+        {/* Soft inner glow centered on map */}
+        <div
+          className="absolute inset-[10%] rounded-full blur-3xl transition-opacity duration-1000"
+          style={{ opacity: mapLoaded ? 0.6 : 0, background: "rgba(255,215,0,0.07)" }}
+        />
 
         <div className="relative w-full inline-block">
-          {/* India map - sleek dark aesthetic map */}
+          {/* India map */}
           <img
             src="/images/india-map.svg"
             alt="India map showing startup locations"
             className="w-full h-auto block transition-all duration-1000 ease-out"
             style={{
-              filter: "brightness(1) sepia(1) hue-rotate(-10deg) saturate(3) opacity(0.8) drop-shadow(0 0 25px rgba(255,215,0,0.6))",
+              filter:
+                "brightness(1.05) sepia(1) hue-rotate(-10deg) saturate(3.5) opacity(0.85) drop-shadow(0 0 30px rgba(255,215,0,0.55))",
               opacity: mapLoaded ? 0.9 : 0,
-              transform: mapLoaded ? 'scale(1)' : 'scale(0.95)',
+              transform: mapLoaded ? "scale(1)" : "scale(0.95)",
             }}
           />
 
-          {/* Premium Cards appearing over the map */}
+          {/* Startup cards */}
           {startups.map((startup, index) => (
-            <StartupCard 
-              key={startup.name} 
-              startup={startup} 
-              isActive={mapLoaded && index === activeIndex} 
+            <StartupCard
+              key={startup.name}
+              startup={startup}
+              isActive={mapLoaded && index === activeIndex}
             />
           ))}
         </div>

@@ -9,7 +9,7 @@ const ContactUs = () => {
 
   return (
     <PageLayout>
-      <section className="hero-gradient section-padding py-20">
+      <section className="hero-gradient section-padding py-20 bg-[url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format,compress&fit=crop&q=30&w=800')] bg-cover bg-center bg-blend-multiply bg-primary/90">
         <div className="mx-auto max-w-7xl">
           <div className="mb-2 flex items-center gap-2 text-xs text-primary-foreground/60">
             <Link to="/" className="hover:text-primary-foreground">Home</Link>

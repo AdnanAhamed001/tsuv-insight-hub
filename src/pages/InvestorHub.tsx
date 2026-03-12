@@ -67,7 +67,7 @@ const InvestorHub = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="hero-gradient section-padding py-20 md:py-28">
+      <section className="hero-gradient section-padding py-20 md:py-28 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format,compress&fit=crop&q=30&w=800')] bg-cover bg-center bg-blend-multiply bg-primary/90">
         <div className="mx-auto max-w-7xl">
           <nav className="mb-6 text-sm text-primary-foreground/60">
             <Link to="/" className="hover:text-secondary">Home</Link>

@@ -100,6 +100,7 @@ const Index = () => {
                 <img 
                   src={p} 
                   alt={`Ecosystem Partner ${i + 1}`} 
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0 hover:scale-105" 
                 />
               </div>
@@ -120,6 +121,7 @@ const Index = () => {
                 <img 
                   src={p} 
                   alt={`Service Partner ${i + 1}`} 
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0 hover:scale-105" 
                 />
               </div>

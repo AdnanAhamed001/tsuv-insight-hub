@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 const ProgramHero = () => (
-  <section className="hero-gradient relative overflow-hidden py-14 md:py-20">
+  <section className="hero-gradient relative overflow-hidden py-14 md:py-20 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format,compress&fit=crop&q=30&w=800')] bg-cover bg-center bg-blend-multiply bg-primary/90">
     <div className="mx-auto max-w-7xl section-padding">
       {/* Breadcrumb */}
       <nav className="mb-4 flex items-center gap-1.5 text-xs text-primary-foreground/60">

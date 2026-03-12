@@ -36,7 +36,7 @@ const Apply = () => {
 
   return (
     <PageLayout>
-      <section className="hero-gradient section-padding py-20 md:py-28">
+      <section className="hero-gradient section-padding py-20 md:py-28 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format,compress&fit=crop&q=30&w=800')] bg-cover bg-center bg-blend-multiply bg-primary/90">
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary">Applications Open</p>
           <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
