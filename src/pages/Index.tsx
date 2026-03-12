@@ -3,7 +3,7 @@ import HeroCarousel from "@/components/home/HeroCarousel";
 import AnimatedMilestones from "@/components/home/AnimatedMilestones";
 import MeetTheTeam from "@/components/home/MeetTheTeam";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 const ecosystemPartnersCount = 54;
 const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem%20Partners/new-logo-${i + 1}.png`);
@@ -19,10 +19,55 @@ const featuredPortfolio = [
 ];
 
 const newsFeed = [
-  { title: "E Waste Social: A B2B...", desc: "Often, recycling and repurposing are viewed by companies as tedious..." },
-  { title: "New age smart pill box...", desc: "As per WHO the majority of the 50% of patients who do not take..." },
-  { title: "BeFriends, Best Caretake...", desc: "Stress and tension have become a part of everyday life..." },
-  { title: "Ezee Notes: Your Partner...", desc: "Be it school or college, students never show interest in studying..." },
+  {
+    title: "'Employee Engagement, Netflix-Style': ExtraMile Play Raises USD 500,000",
+    desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding, scaling its gamified employee engagement platform.",
+    source: "The Wire",
+    sourceColor: "#c0392b",
+    href: "https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding",
+  },
+  {
+    title: "Cohort 2.0 Incubation Program: Seed Funding Opportunity of Up to INR 20 Lacs",
+    desc: "Up to 2 crores worth of perks & benefits available for qualifying startups through this structured incubation initiative.",
+    source: "Funds for NGOs",
+    sourceColor: "#27ae60",
+    href: "https://www2.fundsforngos.org/business-industry/cohort-2-0-incubation-program-seed-funding-opportunity-of-up-to-inr-20-lacs-up-to-2-crores-worth-of-perks-benefits/",
+  },
+  {
+    title: "Ofis Square Hosts High-Impact FoodTech Meetup in Noida",
+    desc: "Strengthening India's food innovation ecosystem with 50+ founders and leading investors driving India's food startup growth.",
+    source: "Passionate In Marketing",
+    sourceColor: "#8e44ad",
+    href: "https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/",
+  },
+  {
+    title: "ExtraMile Play Raises USD 500K Seed Round to Scale Its Gamified Employee Engagement Platform",
+    desc: "ExtraMile Play secures seed funding to expand its innovative platform that transforms workplace engagement through gamification.",
+    source: "The Wire",
+    sourceColor: "#c0392b",
+    href: "https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform",
+  },
+  {
+    title: "Crink Secures Rs 1.8 Crore Pre-Seed Funding to Scale Its AI-Driven Human Wellbeing Platform",
+    desc: "Crink's AI-powered mental wellness app for stress management and parenting guidance closes its pre-seed round.",
+    source: "The Wire",
+    sourceColor: "#c0392b",
+    href: "https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/amp?utm=relatedarticles",
+  },
+  {
+    title: "Delhi Startup Nugenomics Is Using AI/ML for Lifestyle Genetic Testing",
+    desc: "Nugenomics uses DNA analysis combined with AI and lifestyle data to unlock personalised health insights for every individual.",
+    source: "YourStory",
+    sourceColor: "#e67e22",
+    href: "https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing",
+  },
+  {
+    title: "Organic Food Brand Naario Raises Pre-Seed Funding from Women Angel Investors",
+    desc: "Women-led and run organic food brand Naario raises an undisclosed sum from a group of angel investors led by women entrepreneurs.",
+    source: "Times of India",
+    sourceColor: "#2980b9",
+    href: "https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms",
+  },
 ];
 
 const Index = () => {
@@ -151,18 +196,39 @@ const Index = () => {
           <h2 className="mb-10 text-center font-display text-3xl font-bold">
             NEWS <span className="text-secondary">FEED</span>
           </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {newsFeed.map((n, i) => (
-              <div key={i} className="tool-card">
-                <h3 className="mb-2 font-display text-base font-semibold">{n.title}</h3>
-                <p className="text-sm text-muted-foreground">{n.desc}</p>
-              </div>
+              <a
+                key={i}
+                href={n.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col rounded-xl border border-border/60 bg-card shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-secondary/40 hover:-translate-y-1"
+              >
+                {/* Source badge */}
+                <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/40 bg-muted/30">
+                  <span
+                    className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: n.sourceColor }}
+                  />
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide truncate">{n.source}</span>
+                  <ExternalLink size={11} className="ml-auto flex-shrink-0 text-muted-foreground/50 group-hover:text-secondary transition-colors" />
+                </div>
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-4">
+                  <h3 className="font-display text-sm font-semibold leading-snug line-clamp-3 mb-2 group-hover:text-secondary transition-colors">
+                    {n.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground line-clamp-3 mt-auto">{n.desc}</p>
+                </div>
+                {/* Footer */}
+                <div className="px-4 pb-3">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-secondary group-hover:gap-2 transition-all">
+                    Read Article <ArrowRight size={11} />
+                  </span>
+                </div>
+              </a>
             ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary">
-              View All Posts <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>
