@@ -46,16 +46,16 @@ const HeroCarousel = () => {
           {/* Left: Text content */}
           <div className="flex flex-col justify-center">
             <div key={current} className="animate-fade-in group">
-              <h1 className="mb-4 font-display text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-7xl drop-shadow-sm leading-[1.05]">
+              <p className="mb-3 text-sm font-bold tracking-widest uppercase text-secondary/90 transition-colors group-hover:text-secondary">
+                {slide.subtitle}
+              </p>
+              <h1 className="mb-4 font-display text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl drop-shadow-sm leading-[1.1]">
                 {slide.headline}
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[#fff4a3]">
                   {slide.highlight}
                 </span>
               </h1>
-              <p className="mb-6 text-base md:text-lg font-medium leading-relaxed text-white/90 max-w-[600px]">
-                {slide.subtitle}
-              </p>
             </div>
 
             <div className="mb-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-white/75 bg-black/20 p-3 rounded-xl border border-white/10 w-max shadow-inner backdrop-blur-sm">
