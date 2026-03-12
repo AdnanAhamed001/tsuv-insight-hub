@@ -21,34 +21,47 @@ const featuredPortfolio = [
 
 const newsFeed = [
   {
-    title: "'Employee Engagement, Netflix-Style': ExtraMile Play Raises USD 500,000",
-    desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding.",
-    source: "The Wire",
-    sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding")}&embed=image.url`,
-    href: "https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding",
-  },
-  {
     title: "Ofis Square Hosts High-Impact FoodTech Meetup in Noida",
     desc: "Strengthening India's food innovation ecosystem with 50+ founders and investors.",
     source: "Passionate In Marketing",
     sourceColor: "#8e44ad",
+    date: "Feb 2026",
     image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/")}&embed=image.url`,
     href: "https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/",
   },
   {
-    title: "ExtraMile Play Raises USD 500K Seed Round to Scale Its Gamified Employee Engagement Platform",
-    desc: "ExtraMile Play secures seed funding to expand its gamified workplace engagement platform.",
+    title: "TSUV's Partnerships with the Government and Startup Bodies Under 'Building Bharat'",
+    desc: "The StepUp Ventures forges key alliances with government bodies and startup ecosystems.",
+    source: "Entrepreneur India",
+    sourceColor: "#1a5276",
+    date: "Jan 2026",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513")}&embed=image.url`,
+    href: "https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513",
+  },
+  {
+    title: "'Employee Engagement, Netflix-Style': ExtraMile Play Raises USD 500,000",
+    desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding.",
     source: "The Wire",
     sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform")}&embed=image.url`,
-    href: "https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform",
+    date: "Dec 2025",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding")}&embed=image.url`,
+    href: "https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding",
+  },
+  {
+    title: "ExtraMile Play Raises USD 500K Seed Round to Scale Its Gamified Employee Engagement Platform",
+    desc: "ExtraMile Play secures seed funding to expand its gamified workplace engagement platform.",
+    source: "Indian Startup Times",
+    sourceColor: "#c0392b",
+    date: "Nov 2025",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.indianstartuptimes.com/investment/extramile-play-raises-500k-seed-funding-to-scale-ai-driven-gamified-employee-engagement/")}&embed=image.url`,
+    href: "https://www.indianstartuptimes.com/investment/extramile-play-raises-500k-seed-funding-to-scale-ai-driven-gamified-employee-engagement/",
   },
   {
     title: "Crink Secures Rs 1.8 Crore Pre-Seed Funding to Scale Its AI-Driven Human Wellbeing Platform",
     desc: "Crink's AI-powered mental wellness app closes its pre-seed funding round.",
     source: "Tribune India",
     sourceColor: "#c0392b",
+    date: "Nov 2024",
     image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.tribuneindia.com/news/business/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/")}&embed=image.url`,
     href: "https://www.tribuneindia.com/news/business/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/",
   },
@@ -57,6 +70,7 @@ const newsFeed = [
     desc: "Nugenomics combines DNA analysis with AI to unlock personalised health insights.",
     source: "YourStory",
     sourceColor: "#e67e22",
+    date: "Apr 2022",
     image: `https://api.microlink.io/?url=${encodeURIComponent("https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing")}&embed=image.url`,
     href: "https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing",
   },
@@ -65,16 +79,9 @@ const newsFeed = [
     desc: "Women-led Naario raises pre-seed from a group of women entrepreneurs and angel investors.",
     source: "Times of India",
     sourceColor: "#2980b9",
+    date: "Jan 2022",
     image: `https://api.microlink.io/?url=${encodeURIComponent("https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms")}&embed=image.url`,
     href: "https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms",
-  },
-  {
-    title: "TSUV's Partnerships with the Government and Startup Bodies Under 'Building Bharat'",
-    desc: "The StepUp Ventures forges key alliances with government bodies and startup ecosystems to drive Bharat's entrepreneurial growth.",
-    source: "Entrepreneur India",
-    sourceColor: "#1a5276",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513")}&embed=image.url`,
-    href: "https://www.entrepreneurindia.com/blog/en/article/tsuv-s-partnerships-with-the-government-and-startup-bodies-under-building-bharat.55513",
   },
 ];
 
@@ -209,13 +216,14 @@ const Index = () => {
         {/* Marquee track */}
         <div
           className="relative w-full overflow-hidden"
-          style={{ maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)" }}
+          style={{
+            maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+          }}
         >
           <div
-            className="flex gap-5 w-max"
-            style={{
-              animation: "newsMarquee 40s linear infinite",
-            }}
+            className="flex gap-5 w-max py-3"
+            style={{ animation: "newsMarquee 50s linear infinite" }}
             onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
             onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
           >
@@ -245,6 +253,10 @@ const Index = () => {
                     style={{ backgroundColor: n.sourceColor }}
                   >
                     {n.source}
+                  </div>
+                  {/* Date badge */}
+                  <div className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">
+                    {n.date}
                   </div>
                 </div>
                 {/* Content */}
