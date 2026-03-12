@@ -4,6 +4,7 @@ import AnimatedMilestones from "@/components/home/AnimatedMilestones";
 import MeetTheTeam from "@/components/home/MeetTheTeam";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { useRef, useState } from "react";
 
 const ecosystemPartnersCount = 54;
 const ecosystemPartners = Array.from({ length: ecosystemPartnersCount }, (_, i) => `/images/Ecosystem%20Partners/new-logo-${i + 1}.png`);
@@ -21,51 +22,58 @@ const featuredPortfolio = [
 const newsFeed = [
   {
     title: "'Employee Engagement, Netflix-Style': ExtraMile Play Raises USD 500,000",
-    desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding, scaling its gamified employee engagement platform.",
+    desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding.",
     source: "The Wire",
     sourceColor: "#c0392b",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding",
   },
   {
     title: "Cohort 2.0 Incubation Program: Seed Funding Opportunity of Up to INR 20 Lacs",
-    desc: "Up to 2 crores worth of perks & benefits available for qualifying startups through this structured incubation initiative.",
+    desc: "Up to 2 crores worth of perks & benefits for qualifying startups.",
     source: "Funds for NGOs",
     sourceColor: "#27ae60",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www2.fundsforngos.org/business-industry/cohort-2-0-incubation-program-seed-funding-opportunity-of-up-to-inr-20-lacs-up-to-2-crores-worth-of-perks-benefits/")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://www2.fundsforngos.org/business-industry/cohort-2-0-incubation-program-seed-funding-opportunity-of-up-to-inr-20-lacs-up-to-2-crores-worth-of-perks-benefits/",
   },
   {
     title: "Ofis Square Hosts High-Impact FoodTech Meetup in Noida",
-    desc: "Strengthening India's food innovation ecosystem with 50+ founders and leading investors driving India's food startup growth.",
+    desc: "Strengthening India's food innovation ecosystem with 50+ founders and investors.",
     source: "Passionate In Marketing",
     sourceColor: "#8e44ad",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/",
   },
   {
     title: "ExtraMile Play Raises USD 500K Seed Round to Scale Its Gamified Employee Engagement Platform",
-    desc: "ExtraMile Play secures seed funding to expand its innovative platform that transforms workplace engagement through gamification.",
+    desc: "ExtraMile Play secures seed funding to expand its gamified workplace engagement platform.",
     source: "The Wire",
     sourceColor: "#c0392b",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform",
   },
   {
     title: "Crink Secures Rs 1.8 Crore Pre-Seed Funding to Scale Its AI-Driven Human Wellbeing Platform",
-    desc: "Crink's AI-powered mental wellness app for stress management and parenting guidance closes its pre-seed round.",
+    desc: "Crink's AI-powered mental wellness app closes its pre-seed funding round.",
     source: "The Wire",
     sourceColor: "#c0392b",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/amp?utm=relatedarticles",
   },
   {
     title: "Delhi Startup Nugenomics Is Using AI/ML for Lifestyle Genetic Testing",
-    desc: "Nugenomics uses DNA analysis combined with AI and lifestyle data to unlock personalised health insights for every individual.",
+    desc: "Nugenomics combines DNA analysis with AI to unlock personalised health insights.",
     source: "YourStory",
     sourceColor: "#e67e22",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing",
   },
   {
     title: "Organic Food Brand Naario Raises Pre-Seed Funding from Women Angel Investors",
-    desc: "Women-led and run organic food brand Naario raises an undisclosed sum from a group of angel investors led by women entrepreneurs.",
+    desc: "Women-led Naario raises pre-seed from a group of women entrepreneurs and angel investors.",
     source: "Times of India",
     sourceColor: "#2980b9",
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms")}&screenshot=true&meta=false&embed=screenshot.url`,
     href: "https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms",
   },
 ];
@@ -190,47 +198,77 @@ const Index = () => {
         </div>
       </section>
 
-      {/* News Feed */}
-      <section className="section-padding">
+      {/* News Feed – auto-scrolling marquee */}
+      <section className="section-padding overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-10 text-center font-display text-3xl font-bold">
             NEWS <span className="text-secondary">FEED</span>
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {newsFeed.map((n, i) => (
+        </div>
+
+        {/* Marquee track */}
+        <div
+          className="relative w-full overflow-hidden"
+          style={{ maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)" }}
+        >
+          <div
+            className="flex gap-5 w-max"
+            style={{
+              animation: "newsMarquee 40s linear infinite",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
+            onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
+          >
+            {/* Duplicate items for seamless loop */}
+            {[...newsFeed, ...newsFeed].map((n, i) => (
               <a
                 key={i}
                 href={n.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col rounded-xl border border-border/60 bg-card shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-secondary/40 hover:-translate-y-1"
+                className="group flex-shrink-0 w-72 flex flex-col rounded-xl border border-border/60 bg-card shadow-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-secondary/50 hover:-translate-y-1"
               >
-                {/* Source badge */}
-                <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/40 bg-muted/30">
-                  <span
-                    className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"
-                    style={{ backgroundColor: n.sourceColor }}
+                {/* Article image */}
+                <div className="relative w-full h-40 bg-muted/40 overflow-hidden">
+                  <img
+                    src={n.image}
+                    alt={n.title}
+                    loading="eager"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
                   />
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide truncate">{n.source}</span>
-                  <ExternalLink size={11} className="ml-auto flex-shrink-0 text-muted-foreground/50 group-hover:text-secondary transition-colors" />
+                  {/* Source badge overlay */}
+                  <div
+                    className="absolute top-2 left-2 flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-md"
+                    style={{ backgroundColor: n.sourceColor }}
+                  >
+                    {n.source}
+                  </div>
                 </div>
                 {/* Content */}
-                <div className="flex flex-col flex-1 p-4">
-                  <h3 className="font-display text-sm font-semibold leading-snug line-clamp-3 mb-2 group-hover:text-secondary transition-colors">
+                <div className="flex flex-col flex-1 p-3.5">
+                  <h3 className="font-display text-sm font-semibold leading-snug line-clamp-2 mb-1.5 group-hover:text-secondary transition-colors">
                     {n.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-3 mt-auto">{n.desc}</p>
-                </div>
-                {/* Footer */}
-                <div className="px-4 pb-3">
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-secondary group-hover:gap-2 transition-all">
-                    Read Article <ArrowRight size={11} />
+                  <p className="text-xs text-muted-foreground line-clamp-2 mb-3">{n.desc}</p>
+                  <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-secondary">
+                    Read Article <ExternalLink size={10} />
                   </span>
                 </div>
               </a>
             ))}
           </div>
         </div>
+
+        {/* Marquee keyframe injected inline */}
+        <style>{`
+          @keyframes newsMarquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </section>
     </PageLayout>
   );
