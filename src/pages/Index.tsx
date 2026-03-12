@@ -223,7 +223,7 @@ const Index = () => {
         >
           <div
             className="flex gap-5 w-max py-3"
-            style={{ animation: "newsMarquee 50s linear infinite" }}
+            style={{ animation: "newsMarquee 30s linear infinite" }}
             onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
             onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
           >
