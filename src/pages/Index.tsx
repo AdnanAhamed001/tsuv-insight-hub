@@ -25,23 +25,15 @@ const newsFeed = [
     desc: "Another startup from The StepUp Ventures' Acceleration Program secures funding.",
     source: "The Wire",
     sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding")}&embed=image.url`,
     href: "https://thewire.in/ptiprnews/employee-engagement-netflix-style-extramile-play-raises-usd-500000-another-startup-from-the-stepup-ventures-acceleration-program-secures-funding",
-  },
-  {
-    title: "Cohort 2.0 Incubation Program: Seed Funding Opportunity of Up to INR 20 Lacs",
-    desc: "Up to 2 crores worth of perks & benefits for qualifying startups.",
-    source: "Funds for NGOs",
-    sourceColor: "#27ae60",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www2.fundsforngos.org/business-industry/cohort-2-0-incubation-program-seed-funding-opportunity-of-up-to-inr-20-lacs-up-to-2-crores-worth-of-perks-benefits/")}&screenshot=true&meta=false&embed=screenshot.url`,
-    href: "https://www2.fundsforngos.org/business-industry/cohort-2-0-incubation-program-seed-funding-opportunity-of-up-to-inr-20-lacs-up-to-2-crores-worth-of-perks-benefits/",
   },
   {
     title: "Ofis Square Hosts High-Impact FoodTech Meetup in Noida",
     desc: "Strengthening India's food innovation ecosystem with 50+ founders and investors.",
     source: "Passionate In Marketing",
     sourceColor: "#8e44ad",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/")}&embed=image.url`,
     href: "https://www.passionateinmarketing.com/ofis-square-hosts-high-impact-foodtech-meetup-in-noida-strengthening-indias-food-innovation-ecosity/",
   },
   {
@@ -49,7 +41,7 @@ const newsFeed = [
     desc: "ExtraMile Play secures seed funding to expand its gamified workplace engagement platform.",
     source: "The Wire",
     sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform")}&embed=image.url`,
     href: "https://thewire.in/ptiprnews/extramile-play-raises-usd-500k-seed-round-to-scale-its-gamified-employee-engagement-platform",
   },
   {
@@ -57,7 +49,7 @@ const newsFeed = [
     desc: "Crink's AI-powered mental wellness app closes its pre-seed funding round.",
     source: "The Wire",
     sourceColor: "#c0392b",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform")}&embed=image.url`,
     href: "https://m.thewire.in/article/ptiprnews/crink-secures-rs-1-8-crore-pre-seed-funding-to-scale-its-ai-driven-human-wellbeing-platform/amp?utm=relatedarticles",
   },
   {
@@ -65,7 +57,7 @@ const newsFeed = [
     desc: "Nugenomics combines DNA analysis with AI to unlock personalised health insights.",
     source: "YourStory",
     sourceColor: "#e67e22",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing")}&embed=image.url`,
     href: "https://yourstory.com/2022/04/delhi-startup-nugenomics-ai-ml-lifestyle-genetic-testing",
   },
   {
@@ -73,7 +65,7 @@ const newsFeed = [
     desc: "Women-led Naario raises pre-seed from a group of women entrepreneurs and angel investors.",
     source: "Times of India",
     sourceColor: "#2980b9",
-    image: `https://api.microlink.io/?url=${encodeURIComponent("https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms")}&screenshot=true&meta=false&embed=screenshot.url`,
+    image: `https://api.microlink.io/?url=${encodeURIComponent("https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms")}&embed=image.url`,
     href: "https://timesofindia.indiatimes.com/business/india-business/organic-food-brand-naario-raises-pre-seed-funding-from-women-angel-investors-and-entrepreneurs/articleshow/88164734.cms",
   },
 ];
